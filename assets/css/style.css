@@ -932,11 +932,11 @@ button, a {
 }
 
 .steps-grand-stage {
-  width: 620vw;
-  min-width: 8500px;
-  height: calc(100vh - 110px) !important;
+  width: 390vw;
+  min-width: 5200px;
+  height: calc(100vh - 170px) !important;
   max-height: 480px;
-  min-height: 380px;
+  min-height: 360px;
 }
 
 /* Linha Central Horizontal */

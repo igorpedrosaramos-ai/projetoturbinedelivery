@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     mm.add("(min-width: 1024px)", () => {
       const getScrollDistance = () => {
-        return Math.max(0, track.scrollWidth - window.innerWidth + 120);
+        return Math.max(0, track.scrollWidth - window.innerWidth + 80);
       };
 
       // Main horizontal sliding animation
@@ -359,10 +359,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // Pin and scrub on the sticky viewport
-        ScrollTrigger.create({
+      ScrollTrigger.create({
         trigger: pinnedViewport,
         start: "top top",
-        end: () => `+=${Math.max(window.innerHeight * 5.5, getScrollDistance())}`,
+        end: () => `+=${Math.max(window.innerHeight * 4, getScrollDistance())}`,
         pin: true,
         animation: horizontalTween,
         scrub: 1,
@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollTrigger: {
               trigger: pinnedViewport,
               start: "top top",
-              end: () => `+=${Math.max(window.innerHeight * 5.5, getScrollDistance())}`,
+              end: () => `+=${Math.max(window.innerHeight * 4, getScrollDistance())}`,
               scrub: 1,
               invalidateOnRefresh: true
             }
@@ -401,6 +401,19 @@ document.addEventListener('DOMContentLoaded', () => {
           if (stem) gsap.set(stem, { scaleY: 1 });
           if (dot) gsap.set(dot, { scale: 1, opacity: 1, boxShadow: "0 0 20px rgba(244,197,66,0.95)" });
           if (content) gsap.set(content, { opacity: 1, y: 0 });
+
+          // As Passo 1 scrolls out to the left, fade it out gracefully
+          gsap.to(item, {
+            opacity: 0,
+            ease: "power1.out",
+            scrollTrigger: {
+              trigger: item,
+              containerAnimation: horizontalTween,
+              start: "left 35%",
+              end: "left 10%",
+              scrub: 0.5
+            }
+          });
           return;
         }
 
@@ -410,13 +423,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (dot) gsap.set(dot, { scale: 0, opacity: 0 });
         if (content) gsap.set(content, { opacity: 0, y: isTop ? 28 : -28 });
 
-        // Timeline: animates ONLY when reaching the middle zone of the screen
+        // Timeline: animates into full view as it approaches center
         const itemTl = gsap.timeline({
           scrollTrigger: {
             trigger: item,
             containerAnimation: horizontalTween,
-            start: "left 72%",  // remains invisible until entering the central zone
-            end: "left 50%",    // 100% visible and fully formed exactly at the center
+            start: "left 80%",  // begins revealing as it approaches center
+            end: "left 50%",    // 100% visible and fully formed exactly at center
             scrub: 0.5
           }
         });
@@ -450,6 +463,19 @@ document.addEventListener('DOMContentLoaded', () => {
             duration: 0.5
           }, 0.15);
         }
+
+        // 4. Fade out gently when exiting to the left
+        gsap.to(item, {
+          opacity: 0,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: item,
+            containerAnimation: horizontalTween,
+            start: "left 32%",
+            end: "left 8%",
+            scrub: 0.5
+          }
+        });
       });
     });
 
