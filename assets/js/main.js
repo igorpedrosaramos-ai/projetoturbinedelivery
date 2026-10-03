@@ -521,5 +521,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   initStepsTimeline();
+
+  // Client Stream Marquee Arrows Interactivity
+  const clientsPrev = document.getElementById('clientsStreamPrev');
+  const clientsNext = document.getElementById('clientsStreamNext');
+  const clientsTrack = document.getElementById('clientsStreamTrack');
+  if (clientsPrev && clientsNext && clientsTrack) {
+    let currentShift = 0;
+    clientsPrev.addEventListener('click', () => {
+      currentShift += 280;
+      clientsTrack.style.transform = `translateX(${currentShift}px)`;
+    });
+    clientsNext.addEventListener('click', () => {
+      currentShift -= 280;
+      clientsTrack.style.transform = `translateX(${currentShift}px)`;
+    });
+  }
 });
 
