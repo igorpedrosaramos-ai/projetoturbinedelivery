@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 64" width="200" height="64">
+  <rect width="200" height="64" rx="12" fill="#141412" stroke="#262624" stroke-width="1.5"/>
+  <g transform="translate(18, 16)">
+    <circle cx="16" cy="16" r="15" fill="#1F1F1C" stroke="#F4C542" stroke-width="1.2"/>
+    <text x="16" y="21" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="900" fill="#F4C542" text-anchor="middle">05</text>
+  </g>
+  <text x="58" y="31" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF" letter-spacing="0.4">CLIENTE 05</text>
+  <text x="58" y="45" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="700" fill="#A4A49E" letter-spacing="1.2">BISTRO • DELIVERY</text>
+</svg>
