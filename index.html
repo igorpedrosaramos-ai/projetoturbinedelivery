@@ -57,7 +57,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       #mobileMenuBtn {
         display: none !important;
       }
@@ -66,9 +66,6 @@
 </head>
 <body class="bg-brand-bg text-brand-text font-sans antialiased selection:bg-brand-red selection:text-white">
 
-  <!-- ============================================== -->
-  <!-- MAIN NAVIGATION BAR (OFFICIAL TURBINE DARK)   -->
-  <!-- ============================================== -->
   <!-- ============================================== -->
   <!-- MAIN NAVIGATION BAR (OFFICIAL TURBINE DARK)   -->
   <!-- ============================================== -->
@@ -81,7 +78,7 @@
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden md:flex items-center gap-7 lg:gap-9">
+      <nav class="hidden lg:flex items-center gap-7 lg:gap-9">
         <a href="#como-funciona" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Como funciona</a>
         <a href="#desafios" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Serviços</a>
         <a href="#resultados" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Resultados</a>
@@ -93,19 +90,19 @@
       <div class="flex items-center gap-2.5 sm:gap-4">
         <!-- Desktop CTA Button -->
         <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20turbinar%20meu%20delivery." target="_blank"
-           class="hidden md:inline-flex items-center justify-center h-[38px] px-6 bg-[#FFE045] hover:bg-[#F5D830] text-[#000000] text-[13px] font-bold rounded-full transition-all gap-1.5 shadow-md hover:shadow-lg whitespace-nowrap">
+           class="hidden lg:inline-flex items-center justify-center h-[38px] px-6 bg-[#FFE045] hover:bg-[#F5D830] text-[#000000] text-[13px] font-bold rounded-full transition-all gap-1.5 shadow-md hover:shadow-lg whitespace-nowrap">
           <span>Quero turbinar meu delivery</span>
           <span class="text-sm font-bold">→</span>
         </a>
 
         <!-- Mobile Compact CTA Button (matching mobile reference layout) -->
         <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20turbinar%20meu%20delivery." target="_blank"
-           class="md:hidden inline-flex items-center justify-center bg-[#FFE045] hover:bg-[#F5D830] text-[#000000] text-[10px] sm:text-[11px] font-bold rounded-full px-3 py-1.5 leading-[1.15] text-center shadow-sm whitespace-nowrap">
+           class="lg:hidden inline-flex items-center justify-center bg-[#FFE045] hover:bg-[#F5D830] text-[#000000] text-[10px] sm:text-[11px] font-bold rounded-full px-3 py-1.5 leading-[1.15] text-center shadow-sm whitespace-nowrap">
           <span>Quero turbinar<br>meu delivery →</span>
         </a>
 
         <!-- Mobile Menu Button (Hamburger) - hidden on desktop, visible on mobile -->
-        <button id="mobileMenuBtn" class="flex md:hidden p-1.5 text-white hover:text-[#FFE045] focus:outline-none transition-colors items-center justify-center flex-shrink-0" style="width: 36px; height: 36px; background: transparent; border: none; cursor: pointer;" aria-label="Abrir Menu">
+        <button id="mobileMenuBtn" class="flex lg:hidden p-1.5 text-white hover:text-[#FFE045] focus:outline-none transition-colors items-center justify-center flex-shrink-0" style="width: 36px; height: 36px; background: transparent; border: none; cursor: pointer;" aria-label="Abrir Menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px; display: block;">
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -117,7 +114,7 @@
     </div>
 
     <!-- Mobile Dropdown -->
-    <div id="mobileMenu" class="hidden md:hidden bg-[#0A0A0E]/95 backdrop-blur-md border-b border-white/10 px-6 py-5 space-y-4">
+    <div id="mobileMenu" class="hidden lg:hidden bg-[#0A0A0E]/95 backdrop-blur-md border-b border-white/10 px-6 py-5 space-y-4">
       <a href="#como-funciona" class="mobile-nav-link block text-sm font-medium text-white/80 hover:text-white">Como funciona</a>
       <a href="#desafios" class="mobile-nav-link block text-sm font-medium text-white/80 hover:text-white">Serviços</a>
       <a href="#resultados" class="mobile-nav-link block text-sm font-medium text-white/80 hover:text-white">Resultados</a>
@@ -188,14 +185,14 @@
         <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#050505] to-transparent"></div>
 
         <!-- Badge Oficial Murillo Carregari (Mobile) -->
-        <div class="absolute bottom-20 sm:bottom-22 right-3 sm:right-6 z-20 pointer-events-auto">
-          <div class="flex items-center gap-2.5 bg-[#090A0D]/95 backdrop-blur-md border border-white/10 border-l-[3px] border-l-[#FFE045] rounded-lg px-3 py-1.5 shadow-2xl">
+        <div class="absolute bottom-16 sm:bottom-22 right-3 sm:right-6 z-20 pointer-events-auto">
+          <div class="flex items-center gap-2 bg-[#090A0D]/95 backdrop-blur-md border border-white/10 border-l-[3px] border-l-[#FFE045] rounded-lg px-2.5 py-1.5 shadow-2xl">
             <div class="flex flex-col">
-              <span class="text-white font-bold text-[11.5px] sm:text-[12.5px] tracking-tight leading-tight">
+              <span class="text-white font-bold text-[11px] sm:text-[12.5px] tracking-tight leading-tight">
                 Murillo Carregari
               </span>
-              <span class="text-[#FFE045] font-semibold text-[8.5px] sm:text-[9.5px] tracking-wider uppercase mt-0.5 leading-tight">
-                Gestor de Performance de Delivery
+              <span class="text-[#FFE045] font-semibold text-[8px] sm:text-[9.5px] tracking-wider uppercase mt-0.5 leading-tight">
+                Gestor de Performance
               </span>
             </div>
           </div>
@@ -206,7 +203,7 @@
 
     <!-- Main Hero Content Container -->
     <div class="relative z-10 w-full max-w-[1240px] mx-auto px-5 sm:px-10 lg:px-12 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-8 md:pb-12 flex-1 flex flex-col justify-center">
-      <div class="max-w-[270px] xs:max-w-[290px] sm:max-w-md md:max-w-xl lg:max-w-2xl space-y-4 sm:space-y-6 md:space-y-7">
+      <div class="max-w-[340px] sm:max-w-md md:max-w-xl lg:max-w-2xl space-y-4 sm:space-y-6 md:space-y-7">
         
         <!-- Eyebrow -->
         <div class="flex items-start gap-2.5 sm:gap-3">
@@ -217,12 +214,12 @@
         </div>
 
         <!-- H1 Headline with exact line breaks from reference -->
-        <h1 class="text-[27px] xs:text-[31px] sm:text-4xl md:text-5xl lg:text-[52px] font-extrabold text-white tracking-tight leading-[1.12] sm:leading-[1.1]">
+        <h1 class="text-[28px] sm:text-4xl md:text-5xl lg:text-[52px] font-extrabold text-white tracking-tight leading-[1.12] sm:leading-[1.1]">
           Seu delivery não<br>precisa ser mais uma<br>coisa para você<br><span class="text-[#FFE045]">administrar.</span>
         </h1>
 
         <!-- Subtitle with exact crisp styling -->
-        <p class="text-[12.5px] xs:text-[13.5px] sm:text-[14.5px] md:text-[15.5px] text-[#D4D4D8] font-normal leading-[1.55] sm:leading-[1.65]">
+        <p class="text-[13px] sm:text-[14.5px] md:text-[15.5px] text-[#D4D4D8] font-normal leading-[1.55] sm:leading-[1.65]">
           A Turbine Gestão Delivery assume a operação do seu cardápio nos principais aplicativos, otimizando preços, imagens, descrições, promoções e posicionamento para aumentar suas vendas.
         </p>
 
@@ -873,7 +870,7 @@
           <div class="steps-rail steps-rail-top relative h-1/2 w-full pb-1">
             
             <!-- Passo 1 (Começa centralizado na tela!) -->
-            <div class="step-milestone step-milestone-top absolute left-[calc(50vw-280px)] bottom-0 h-full w-[44vw] min-w-[500px] max-w-[620px] flex flex-col justify-end pb-2" data-step="1">
+            <div class="step-milestone step-milestone-top lg:absolute lg:left-[calc(50vw-280px)] lg:bottom-0 lg:h-full lg:w-[44vw] lg:min-w-[500px] lg:max-w-[620px] flex flex-col justify-end pb-2" data-step="1">
               <div class="absolute left-0 bottom-0 top-0 w-px flex flex-col items-center justify-end">
                 <div class="w-[16px] h-[16px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_20px_#F4C542] mb-[-8px] z-20 step-dot"></div>
                 <div class="w-[2.5px] h-[78%] bg-gradient-to-t from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
@@ -895,7 +892,7 @@
             </div>
 
             <!-- Passo 3 -->
-            <div class="step-milestone step-milestone-top absolute left-[calc(160vw-280px)] bottom-0 h-full w-[44vw] min-w-[500px] max-w-[620px] flex flex-col justify-end pb-2" data-step="3">
+            <div class="step-milestone step-milestone-top lg:absolute lg:left-[calc(160vw-280px)] lg:bottom-0 lg:h-full lg:w-[44vw] lg:min-w-[500px] lg:max-w-[620px] flex flex-col justify-end pb-2" data-step="3">
               <div class="absolute left-0 bottom-0 top-0 w-px flex flex-col items-center justify-end">
                 <div class="w-[16px] h-[16px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_20px_#F4C542] mb-[-8px] z-20 step-dot"></div>
                 <div class="w-[2.5px] h-[78%] bg-gradient-to-t from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
@@ -915,7 +912,7 @@
             </div>
 
             <!-- Passo 5 -->
-            <div class="step-milestone step-milestone-top absolute left-[calc(270vw-280px)] bottom-0 h-full w-[44vw] min-w-[500px] max-w-[620px] flex flex-col justify-end pb-2" data-step="5">
+            <div class="step-milestone step-milestone-top lg:absolute lg:left-[calc(270vw-280px)] lg:bottom-0 lg:h-full lg:w-[44vw] lg:min-w-[500px] lg:max-w-[620px] flex flex-col justify-end pb-2" data-step="5">
               <div class="absolute left-0 bottom-0 top-0 w-px flex flex-col items-center justify-end">
                 <div class="w-[16px] h-[16px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_20px_#F4C542] mb-[-8px] z-20 step-dot"></div>
                 <div class="w-[2.5px] h-[78%] bg-gradient-to-t from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
@@ -941,7 +938,7 @@
           <div class="steps-rail steps-rail-bottom relative h-1/2 w-full pt-1">
             
             <!-- Passo 2 -->
-            <div class="step-milestone step-milestone-bottom absolute left-[calc(105vw-280px)] top-0 h-full w-[44vw] min-w-[500px] max-w-[620px] flex flex-col justify-start pt-2" data-step="2">
+            <div class="step-milestone step-milestone-bottom lg:absolute lg:left-[calc(105vw-280px)] lg:top-0 lg:h-full lg:w-[44vw] lg:min-w-[500px] lg:max-w-[620px] flex flex-col justify-start pt-2" data-step="2">
               <div class="absolute left-0 top-0 bottom-0 w-px flex flex-col items-center justify-start">
                 <div class="w-[16px] h-[16px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_20px_#F4C542] mt-[-8px] z-20 step-dot"></div>
                 <div class="w-[2.5px] h-[78%] bg-gradient-to-b from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
@@ -962,7 +959,7 @@
             </div>
 
             <!-- Passo 4 -->
-            <div class="step-milestone step-milestone-bottom absolute left-[calc(215vw-280px)] top-0 h-full w-[44vw] min-w-[500px] max-w-[620px] flex flex-col justify-start pt-2" data-step="4">
+            <div class="step-milestone step-milestone-bottom lg:absolute lg:left-[calc(215vw-280px)] lg:top-0 lg:h-full lg:w-[44vw] lg:min-w-[500px] lg:max-w-[620px] flex flex-col justify-start pt-2" data-step="4">
               <div class="absolute left-0 top-0 bottom-0 w-px flex flex-col items-center justify-start">
                 <div class="w-[16px] h-[16px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_20px_#F4C542] mt-[-8px] z-20 step-dot"></div>
                 <div class="w-[2.5px] h-[78%] bg-gradient-to-b from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
@@ -983,7 +980,7 @@
             </div>
 
             <!-- Conclusão da Timeline -->
-            <div class="step-milestone step-milestone-bottom absolute left-[calc(325vw-280px)] top-0 h-full w-[44vw] min-w-[500px] max-w-[620px] flex flex-col justify-start pt-2" data-step="6">
+            <div class="step-milestone step-milestone-bottom lg:absolute lg:left-[calc(325vw-280px)] lg:top-0 lg:h-full lg:w-[44vw] lg:min-w-[500px] lg:max-w-[620px] flex flex-col justify-start pt-2" data-step="6">
               <div class="absolute left-0 top-0 bottom-0 w-px flex flex-col items-center justify-start">
                 <div class="w-[16px] h-[16px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_20px_#F4C542] mt-[-8px] z-20 step-dot"></div>
                 <div class="w-[2.5px] h-[78%] bg-gradient-to-b from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
@@ -1414,7 +1411,7 @@
             </div>
             <div class="p-4 rounded-lg bg-brand-bg border border-brand-border flex items-center gap-3">
               <span class="text-brand-red font-bold">E-mail:</span>
-              <a href="mailto:murillo.delivery88@gmail.com" class="text-brand-text font-bold hover:underline">
+              <a href="mailto:murillo.delivery88@gmail.com" class="text-brand-text font-bold hover:underline break-all">
                 murillo.delivery88@gmail.com
               </a>
             </div>

@@ -7,10 +7,13 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
   overflow-x: hidden;
+  max-width: 100vw;
   background-color: #F8F8FA;
   color: #111113;
 }
@@ -516,11 +519,19 @@ button, a {
 .why-title {
   margin: 0;
   color: #F5F5F3;
-  font-size: clamp(40px, 4.6vw, 68px);
+  font-size: clamp(28px, 4.4vw, 68px);
   font-weight: 800;
-  line-height: 1.08;
+  line-height: 1.1;
   letter-spacing: -0.035em;
   min-height: 2.2em; /* Preserva o layout fixo sem qualquer salto durante a digitação */
+}
+
+@media (max-width: 640px) {
+  .why-title {
+    font-size: clamp(26px, 7vw, 36px);
+    line-height: 1.15;
+    min-height: 2.3em;
+  }
 }
 
 #twPart1 {
@@ -865,11 +876,11 @@ button, a {
     padding: 56px 18px;
   }
   .cardstack-stage {
-    height: 480px;
+    height: 490px;
   }
   .cardstack-card {
-    height: 420px;
-    padding: 26px 20px 20px;
+    height: 430px;
+    padding: 24px 18px 18px;
   }
   .card-body-title {
     font-size: 21px;
@@ -1001,11 +1012,16 @@ button, a {
     height: auto;
   }
   .steps-grand-stage {
-    width: max-content;
-    height: auto;
-    display: flex;
+    width: max-content !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: auto !important;
+    display: flex !important;
     flex-direction: row !important;
-    gap: 20px;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+    padding-right: 24px !important;
   }
   .steps-grand-axis {
     display: none !important;
@@ -1014,20 +1030,31 @@ button, a {
   .steps-rail > div:not(.step-milestone):not(.steps-title-card) {
     display: contents !important;
   }
-  .steps-title-card,
-  .steps-rail-bottom > div:first-child {
+  .steps-title-card {
     display: none !important;
   }
   .step-milestone {
-    width: 85vw;
-    max-width: 340px;
-    height: auto;
-    min-width: 290px;
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 85vw !important;
+    max-width: 340px !important;
+    min-width: 280px !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
+    opacity: 1 !important;
+    transform: none !important;
     padding: 24px 20px !important;
     background: #141412;
     border: 1px solid rgba(244, 197, 66, 0.2);
     border-radius: 20px;
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+  }
+  .step-milestone .step-content {
+    opacity: 1 !important;
+    transform: none !important;
   }
   .step-milestone-top, .step-milestone-bottom {
     justify-content: flex-start !important;

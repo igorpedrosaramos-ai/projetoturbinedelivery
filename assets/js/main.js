@@ -477,6 +477,37 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       });
+
+      // Cleanup when leaving desktop breakpoint (resize / zoom)
+      return () => {
+        gsap.set(track, { clearProps: "all" });
+        if (lineFill) gsap.set(lineFill, { clearProps: "all" });
+        milestones.forEach((item) => {
+          gsap.set(item, { clearProps: "all" });
+          const stem = item.querySelector('.step-stem');
+          const dot = item.querySelector('.step-dot') || item.querySelector('.rounded-full');
+          const content = item.querySelector('.step-content');
+          if (stem) gsap.set(stem, { clearProps: "all" });
+          if (dot) gsap.set(dot, { clearProps: "all" });
+          if (content) gsap.set(content, { clearProps: "all" });
+        });
+      };
+    });
+
+    // Mobile & Tablet (< 1024px): reset any inline transforms and opacities
+    mm.add("(max-width: 1023px)", () => {
+      gsap.set(track, { clearProps: "all" });
+      if (lineFill) gsap.set(lineFill, { clearProps: "all" });
+      const milestones = track.querySelectorAll('.step-milestone');
+      milestones.forEach((item) => {
+        gsap.set(item, { clearProps: "all" });
+        const stem = item.querySelector('.step-stem');
+        const dot = item.querySelector('.step-dot') || item.querySelector('.rounded-full');
+        const content = item.querySelector('.step-content');
+        if (stem) gsap.set(stem, { clearProps: "all" });
+        if (dot) gsap.set(dot, { clearProps: "all" });
+        if (content) gsap.set(content, { clearProps: "all" });
+      });
     });
 
     // Window resize / zoom listener with debounce
