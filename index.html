@@ -848,7 +848,7 @@
     <!-- Mobile Header (somente em < lg) -->
     <div class="block lg:hidden px-6 pt-12 pb-2">
       <h2 class="text-3xl font-extrabold text-white leading-tight">
-        5 Passos do Sucesso <span class="text-[#F4C542]">Turbine</span>
+        Os 5 Passos do Sucesso da <span class="text-[#F4C542]">Turbine</span>
       </h2>
       <p class="text-xs text-[#A4A49E] mt-1 font-mono uppercase tracking-wider flex items-center gap-1.5">
         <span>Arraste para o lado</span> &rarr;
@@ -858,14 +858,14 @@
     <!-- 2. PINNED HORIZONTAL TIMELINE -->
     <div class="steps-pinned-viewport h-screen w-full sticky top-0 overflow-hidden flex flex-col justify-between py-2 lg:py-3">
       
-      <!-- Header Superior: 5 Passos do Sucesso Turbine -->
+      <!-- Header Superior: Os 5 Passos do Sucesso da Turbine -->
       <div class="steps-top-header hidden lg:flex flex-col items-center justify-center w-full text-center z-20 flex-shrink-0 px-6 pt-2 pb-1">
         <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-none">
-          5 Passos do Sucesso <span class="text-[#F4C542]">Turbine</span>
+          Os 5 Passos do Sucesso da <span class="text-[#F4C542]">Turbine</span>
         </h2>
       </div>
 
-      <div class="steps-grand-slider flex flex-1 w-max items-center px-8 lg:px-[5vw]" id="stepsSliderTrack">
+      <div class="steps-grand-slider flex flex-1 w-max items-center px-4" id="stepsSliderTrack">
         
         <!-- Palco Aberto Editorial da Linha do Tempo -->
         <div class="steps-grand-stage relative h-full flex-shrink-0 flex flex-col justify-between">
@@ -880,150 +880,143 @@
           </div>
 
           <!-- Trilho Superior (h-1/2): Passos 1, 3, 5 -->
-          <div class="steps-rail steps-rail-top flex h-1/2 w-full items-end justify-start pb-1">
-            <!-- Passos Superiores: 1, 3, 5 -->
-            <div class="flex h-full gap-x-[54vw] items-end ml-[6vw]">
-              
-              <!-- Passo 1 -->
-              <div class="step-milestone step-milestone-top relative h-full w-[38vw] min-w-[450px] max-w-[580px] flex-shrink-0 flex flex-col justify-end pb-2" data-step="1">
-                <div class="absolute left-0 bottom-0 top-0 w-px flex flex-col items-center justify-end">
-                  <div class="w-[14px] h-[14px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_18px_#F4C542] mb-[-7px] z-20 step-dot"></div>
-                  <div class="w-[2px] h-[75%] bg-gradient-to-t from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
-                </div>
-                <div class="step-content pl-8 space-y-1.5 mb-1.5">
-                  <h3 class="text-xl md:text-2xl lg:text-[27px] font-black leading-tight text-white tracking-tight">
-                    Passo 1 — Análise Inicial da Loja
-                  </h3>
-                  <p class="text-xs md:text-sm lg:text-[15px] leading-snug text-[#F4C542] font-bold">
-                    Diagnóstico completo da sua operação.
-                  </p>
-                  <div class="space-y-1 lg:space-y-1.5 pt-0.5 text-xs lg:text-[13.5px] text-[#D6D6D0] leading-snug">
-                    <p><strong class="text-white font-bold">Cardápio:</strong> Avaliação completa de produtos, preços e apresentação.</p>
-                    <p><strong class="text-white font-bold">Avaliações:</strong> Análise detalhada dos comentários e pontuações.</p>
-                    <p><strong class="text-white font-bold">Métricas:</strong> Estudo de vendas, cancelamentos e tempo de entrega.</p>
-                    <p><strong class="text-white font-bold">Concorrência:</strong> Comparativo com restaurantes similares na região.</p>
-                  </div>
+          <div class="steps-rail steps-rail-top relative h-1/2 w-full pb-1">
+            
+            <!-- Passo 1 (Começa centralizado na tela!) -->
+            <div class="step-milestone step-milestone-top absolute left-[calc(50vw-290px)] bottom-0 h-full w-[44vw] min-w-[500px] max-w-[620px] flex flex-col justify-end pb-2" data-step="1">
+              <div class="absolute left-0 bottom-0 top-0 w-px flex flex-col items-center justify-end">
+                <div class="w-[16px] h-[16px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_20px_#F4C542] mb-[-8px] z-20 step-dot"></div>
+                <div class="w-[2.5px] h-[78%] bg-gradient-to-t from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
+              </div>
+              <div class="step-content pl-9 space-y-2 mb-2">
+                <h3 class="text-2xl md:text-3xl lg:text-[32px] font-black leading-tight text-white tracking-tight">
+                  Passo 1 — Análise Inicial da Loja
+                </h3>
+                <p class="text-base md:text-lg lg:text-[18px] leading-snug text-[#F4C542] font-extrabold tracking-wide">
+                  Diagnóstico completo da sua operação.
+                </p>
+                <div class="space-y-2 pt-1 text-sm md:text-base lg:text-[16.5px] text-[#E8E8E2] leading-relaxed">
+                  <p><strong class="text-white font-extrabold text-[16px] lg:text-[17.5px]">Cardápio:</strong> Avaliação completa de produtos, preços e apresentação.</p>
+                  <p><strong class="text-white font-extrabold text-[16px] lg:text-[17.5px]">Avaliações:</strong> Análise detalhada dos comentários e pontuações.</p>
+                  <p><strong class="text-white font-extrabold text-[16px] lg:text-[17.5px]">Métricas:</strong> Estudo de vendas, cancelamentos e tempo de entrega.</p>
+                  <p><strong class="text-white font-extrabold text-[16px] lg:text-[17.5px]">Concorrência:</strong> Comparativo com restaurantes similares na região.</p>
                 </div>
               </div>
-
-              <!-- Passo 3 -->
-              <div class="step-milestone step-milestone-top relative h-full w-[38vw] min-w-[450px] max-w-[580px] flex-shrink-0 flex flex-col justify-end pb-2" data-step="3">
-                <div class="absolute left-0 bottom-0 top-0 w-px flex flex-col items-center justify-end">
-                  <div class="w-[14px] h-[14px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_18px_#F4C542] mb-[-7px] z-20 step-dot"></div>
-                  <div class="w-[2px] h-[75%] bg-gradient-to-t from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
-                </div>
-                <div class="step-content pl-8 space-y-1.5 mb-1.5">
-                  <h3 class="text-xl md:text-2xl lg:text-[27px] font-black leading-tight text-white tracking-tight">
-                    Passo 3 — Monitoramento Semanal
-                  </h3>
-                  <p class="text-xs md:text-sm lg:text-[15px] leading-snug text-[#F4C542] font-bold">
-                    Acompanhamento contínuo de resultados.
-                  </p>
-                  <div class="space-y-1 lg:space-y-1.5 pt-0.5 text-xs lg:text-[13.5px] text-[#D6D6D0] leading-snug">
-                    <p><strong class="text-white font-bold">Controle Operacional:</strong> Monitoramento de pedidos, tempo de expedição e notas nos apps (iFood • KeeTa • 99Food).</p>
-                    <p><strong class="text-white font-bold">Vendas & Avaliações:</strong> Acompanhamento semana a semana com metas claras de crescimento.</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Passo 5 -->
-              <div class="step-milestone step-milestone-top relative h-full w-[38vw] min-w-[450px] max-w-[580px] flex-shrink-0 flex flex-col justify-end pb-2" data-step="5">
-                <div class="absolute left-0 bottom-0 top-0 w-px flex flex-col items-center justify-end">
-                  <div class="w-[14px] h-[14px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_18px_#F4C542] mb-[-7px] z-20 step-dot"></div>
-                  <div class="w-[2px] h-[75%] bg-gradient-to-t from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
-                </div>
-                <div class="step-content pl-8 space-y-1.5 mb-1.5">
-                  <h3 class="text-xl md:text-2xl lg:text-[27px] font-black leading-tight text-white tracking-tight">
-                    Passo 5 — Relatórios & Suporte
-                  </h3>
-                  <p class="text-xs md:text-sm lg:text-[15px] leading-snug text-[#F4C542] font-bold">
-                    Relatórios detalhados e orientação constante.
-                  </p>
-                  <div class="space-y-1 lg:space-y-1.5 pt-0.5 text-xs lg:text-[13.5px] text-[#D6D6D0] leading-snug">
-                    <p><strong class="text-white font-bold">Relatórios Semanais:</strong> Documentos detalhados com análises e recomendações específicas.</p>
-                    <p><strong class="text-white font-bold">Reuniões Periódicas:</strong> Encontros virtuais para discutir estratégias e resultados.</p>
-                    <p><strong class="text-white font-bold">Suporte Contínuo:</strong> Equipe disponível para resolver dúvidas e implementar ajustes.</p>
-                  </div>
-                </div>
-              </div>
-
             </div>
+
+            <!-- Passo 3 -->
+            <div class="step-milestone step-milestone-top absolute left-[calc(250vw-290px)] bottom-0 h-full w-[44vw] min-w-[500px] max-w-[620px] flex flex-col justify-end pb-2" data-step="3">
+              <div class="absolute left-0 bottom-0 top-0 w-px flex flex-col items-center justify-end">
+                <div class="w-[16px] h-[16px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_20px_#F4C542] mb-[-8px] z-20 step-dot"></div>
+                <div class="w-[2.5px] h-[78%] bg-gradient-to-t from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
+              </div>
+              <div class="step-content pl-9 space-y-2 mb-2">
+                <h3 class="text-2xl md:text-3xl lg:text-[32px] font-black leading-tight text-white tracking-tight">
+                  Passo 3 — Monitoramento Semanal
+                </h3>
+                <p class="text-base md:text-lg lg:text-[18px] leading-snug text-[#F4C542] font-extrabold tracking-wide">
+                  Acompanhamento contínuo de resultados.
+                </p>
+                <div class="space-y-2 pt-1 text-sm md:text-base lg:text-[16.5px] text-[#E8E8E2] leading-relaxed">
+                  <p><strong class="text-white font-extrabold text-[16px] lg:text-[17.5px]">Controle Operacional:</strong> Monitoramento de pedidos, tempo de expedição e notas nos apps (iFood • KeeTa • 99Food).</p>
+                  <p><strong class="text-white font-extrabold text-[16px] lg:text-[17.5px]">Vendas & Avaliações:</strong> Acompanhamento semana a semana com metas claras de crescimento.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Passo 5 -->
+            <div class="step-milestone step-milestone-top absolute left-[calc(450vw-290px)] bottom-0 h-full w-[44vw] min-w-[500px] max-w-[620px] flex flex-col justify-end pb-2" data-step="5">
+              <div class="absolute left-0 bottom-0 top-0 w-px flex flex-col items-center justify-end">
+                <div class="w-[16px] h-[16px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_20px_#F4C542] mb-[-8px] z-20 step-dot"></div>
+                <div class="w-[2.5px] h-[78%] bg-gradient-to-t from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
+              </div>
+              <div class="step-content pl-9 space-y-2 mb-2">
+                <h3 class="text-2xl md:text-3xl lg:text-[32px] font-black leading-tight text-white tracking-tight">
+                  Passo 5 — Relatórios & Suporte
+                </h3>
+                <p class="text-base md:text-lg lg:text-[18px] leading-snug text-[#F4C542] font-extrabold tracking-wide">
+                  Relatórios detalhados e orientação constante.
+                </p>
+                <div class="space-y-2 pt-1 text-sm md:text-base lg:text-[16.5px] text-[#E8E8E2] leading-relaxed">
+                  <p><strong class="text-white font-extrabold text-[16px] lg:text-[17.5px]">Relatórios Semanais:</strong> Documentos detalhados com análises e recomendações específicas.</p>
+                  <p><strong class="text-white font-extrabold text-[16px] lg:text-[17.5px]">Reuniões Periódicas:</strong> Encontros virtuais para discutir estratégias e resultados.</p>
+                  <p><strong class="text-white font-extrabold text-[16px] lg:text-[17.5px]">Suporte Contínuo:</strong> Equipe disponível para resolver dúvidas e implementar ajustes.</p>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <!-- Trilho Inferior (h-1/2): Passos 2, 4 + Conclusão -->
-          <div class="steps-rail steps-rail-bottom flex h-1/2 w-full items-start justify-start pt-1">
-            <!-- Espaço inicial para intercalar exatamente o Passo 2 entre o Passo 1 e o Passo 3 -->
-            <div class="w-[52vw] min-w-[500px] flex-shrink-0"></div>
-
-            <!-- Passos Inferiores: 2, 4, Conclusão -->
-            <div class="flex h-full gap-x-[54vw] items-start">
-              
-              <!-- Passo 2 -->
-              <div class="step-milestone step-milestone-bottom relative h-full w-[38vw] min-w-[450px] max-w-[580px] flex-shrink-0 flex flex-col justify-start pt-2" data-step="2">
-                <div class="absolute left-0 top-0 bottom-0 w-px flex flex-col items-center justify-start">
-                  <div class="w-[14px] h-[14px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_18px_#F4C542] mt-[-7px] z-20 step-dot"></div>
-                  <div class="w-[2px] h-[75%] bg-gradient-to-b from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
-                </div>
-                <div class="step-content pl-8 space-y-1.5 mt-1.5">
-                  <h3 class="text-xl md:text-2xl lg:text-[27px] font-black leading-tight text-white tracking-tight">
-                    Passo 2 — Estratégias de Sucesso
-                  </h3>
-                  <p class="text-xs md:text-sm lg:text-[15px] leading-snug text-[#F4C542] font-bold">
-                    Implementação de táticas comprovadas.
-                  </p>
-                  <div class="space-y-1 lg:space-y-1.5 pt-0.5 text-xs lg:text-[13.5px] text-[#D6D6D0] leading-snug">
-                    <p><strong class="text-white font-bold">Fotos Profissionais:</strong> Imagens que destacam seu produto e aumentam conversão.</p>
-                    <p><strong class="text-white font-bold">Precificação Estratégica:</strong> Valores otimizados para maximizar vendas e lucro.</p>
-                    <p><strong class="text-white font-bold">Combos Vencedores:</strong> Criação de ofertas irresistíveis que aumentam o ticket médio.</p>
-                  </div>
+          <div class="steps-rail steps-rail-bottom relative h-1/2 w-full pt-1">
+            
+            <!-- Passo 2 -->
+            <div class="step-milestone step-milestone-bottom absolute left-[calc(150vw-290px)] top-0 h-full w-[44vw] min-w-[500px] max-w-[620px] flex flex-col justify-start pt-2" data-step="2">
+              <div class="absolute left-0 top-0 bottom-0 w-px flex flex-col items-center justify-start">
+                <div class="w-[16px] h-[16px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_20px_#F4C542] mt-[-8px] z-20 step-dot"></div>
+                <div class="w-[2.5px] h-[78%] bg-gradient-to-b from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
+              </div>
+              <div class="step-content pl-9 space-y-2 mt-2">
+                <h3 class="text-2xl md:text-3xl lg:text-[32px] font-black leading-tight text-white tracking-tight">
+                  Passo 2 — Estratégias de Sucesso
+                </h3>
+                <p class="text-base md:text-lg lg:text-[18px] leading-snug text-[#F4C542] font-extrabold tracking-wide">
+                  Implementação de táticas comprovadas.
+                </p>
+                <div class="space-y-2 pt-1 text-sm md:text-base lg:text-[16.5px] text-[#E8E8E2] leading-relaxed">
+                  <p><strong class="text-white font-extrabold text-[16px] lg:text-[17.5px]">Fotos Profissionais:</strong> Imagens que destacam seu produto e aumentam conversão.</p>
+                  <p><strong class="text-white font-extrabold text-[16px] lg:text-[17.5px]">Precificação Estratégica:</strong> Valores otimizados para maximizar vendas e lucro.</p>
+                  <p><strong class="text-white font-extrabold text-[16px] lg:text-[17.5px]">Combos Vencedores:</strong> Criação de ofertas irresistíveis que aumentam o ticket médio.</p>
                 </div>
               </div>
-
-              <!-- Passo 4 -->
-              <div class="step-milestone step-milestone-bottom relative h-full w-[38vw] min-w-[450px] max-w-[580px] flex-shrink-0 flex flex-col justify-start pt-2" data-step="4">
-                <div class="absolute left-0 top-0 bottom-0 w-px flex flex-col items-center justify-start">
-                  <div class="w-[14px] h-[14px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_18px_#F4C542] mt-[-7px] z-20 step-dot"></div>
-                  <div class="w-[2px] h-[75%] bg-gradient-to-b from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
-                </div>
-                <div class="step-content pl-8 space-y-1.5 mt-1.5">
-                  <h3 class="text-xl md:text-2xl lg:text-[27px] font-black leading-tight text-white tracking-tight">
-                    Passo 4 — Gestão de Promoções
-                  </h3>
-                  <p class="text-xs md:text-sm lg:text-[15px] leading-snug text-[#F4C542] font-bold">
-                    Otimização de cupons e ofertas.
-                  </p>
-                  <div class="space-y-1 lg:space-y-1.5 pt-0.5 text-xs lg:text-[13.5px] text-[#D6D6D0] leading-snug">
-                    <p><strong class="text-white font-bold">Planejamento:</strong> Calendário estratégico de promoções alinhado com datas-chave.</p>
-                    <p><strong class="text-white font-bold">Segmentação:</strong> Ofertas direcionadas para públicos específicos.</p>
-                    <p><strong class="text-white font-bold">Análise & Otimização:</strong> Avaliação do retorno de cada promoção e ajustes contínuos.</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Conclusão da Timeline -->
-              <div class="step-milestone step-milestone-bottom relative h-full w-[38vw] min-w-[450px] max-w-[580px] flex-shrink-0 flex flex-col justify-start pt-2" data-step="6">
-                <div class="absolute left-0 top-0 bottom-0 w-px flex flex-col items-center justify-start">
-                  <div class="w-[14px] h-[14px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_18px_#F4C542] mt-[-7px] z-20 step-dot"></div>
-                  <div class="w-[2px] h-[75%] bg-gradient-to-b from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
-                </div>
-                <div class="step-content pl-8 space-y-2 mt-1.5">
-                  <h3 class="text-xl md:text-2xl lg:text-[27px] font-black leading-tight text-white tracking-tight">
-                    Operação Pronta para Escalar
-                  </h3>
-                  <p class="text-xs md:text-sm lg:text-[15px] leading-snug text-[#D6D6D0] font-medium">
-                    Processos alinhados, visibilidade no topo e margem saudável em todos os pedidos.
-                  </p>
-                  <div class="pt-2">
-                    <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-[#F4C542] text-[#0B0B0A] font-black text-xs md:text-sm uppercase tracking-wider hover:bg-[#FFE045] shadow-[0_0_24px_rgba(244,197,66,0.4)] transition-all">
-                      <span>Falar com Especialista</span>
-                      <span>&rarr;</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
             </div>
+
+            <!-- Passo 4 -->
+            <div class="step-milestone step-milestone-bottom absolute left-[calc(350vw-290px)] top-0 h-full w-[44vw] min-w-[500px] max-w-[620px] flex flex-col justify-start pt-2" data-step="4">
+              <div class="absolute left-0 top-0 bottom-0 w-px flex flex-col items-center justify-start">
+                <div class="w-[16px] h-[16px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_20px_#F4C542] mt-[-8px] z-20 step-dot"></div>
+                <div class="w-[2.5px] h-[78%] bg-gradient-to-b from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
+              </div>
+              <div class="step-content pl-9 space-y-2 mt-2">
+                <h3 class="text-2xl md:text-3xl lg:text-[32px] font-black leading-tight text-white tracking-tight">
+                  Passo 4 — Gestão de Promoções
+                </h3>
+                <p class="text-base md:text-lg lg:text-[18px] leading-snug text-[#F4C542] font-extrabold tracking-wide">
+                  Otimização de cupons e ofertas.
+                </p>
+                <div class="space-y-2 pt-1 text-sm md:text-base lg:text-[16.5px] text-[#E8E8E2] leading-relaxed">
+                  <p><strong class="text-white font-extrabold text-[16px] lg:text-[17.5px]">Planejamento:</strong> Calendário estratégico de promoções alinhado com datas-chave.</p>
+                  <p><strong class="text-white font-extrabold text-[16px] lg:text-[17.5px]">Segmentação:</strong> Ofertas direcionadas para públicos específicos.</p>
+                  <p><strong class="text-white font-extrabold text-[16px] lg:text-[17.5px]">Análise & Otimização:</strong> Avaliação do retorno de cada promoção e ajustes contínuos.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Conclusão da Timeline -->
+            <div class="step-milestone step-milestone-bottom absolute left-[calc(550vw-290px)] top-0 h-full w-[44vw] min-w-[500px] max-w-[620px] flex flex-col justify-start pt-2" data-step="6">
+              <div class="absolute left-0 top-0 bottom-0 w-px flex flex-col items-center justify-start">
+                <div class="w-[16px] h-[16px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_20px_#F4C542] mt-[-8px] z-20 step-dot"></div>
+                <div class="w-[2.5px] h-[78%] bg-gradient-to-b from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
+              </div>
+              <div class="step-content pl-9 space-y-2.5 mt-2">
+                <h3 class="text-2xl md:text-3xl lg:text-[32px] font-black leading-tight text-white tracking-tight">
+                  Operação Pronta para Escalar
+                </h3>
+                <p class="text-sm md:text-base lg:text-[17px] leading-relaxed text-[#E0E0DA] font-medium">
+                  Processos alinhados, visibilidade no topo e margem saudável em todos os pedidos.
+                </p>
+                <div class="pt-2">
+                  <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-[#F4C542] text-[#0B0B0A] font-black text-sm md:text-base uppercase tracking-wider hover:bg-[#FFE045] shadow-[0_0_24px_rgba(244,197,66,0.4)] transition-all">
+                    <span>Falar com Especialista</span>
+                    <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
           </div>
+        </div>
+      </div>
 
         </div>
 

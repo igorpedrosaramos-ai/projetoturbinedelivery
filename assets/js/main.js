@@ -359,10 +359,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // Pin and scrub on the sticky viewport
-      ScrollTrigger.create({
+        ScrollTrigger.create({
         trigger: pinnedViewport,
         start: "top top",
-        end: () => `+=${Math.max(window.innerHeight * 3.5, getScrollDistance())}`,
+        end: () => `+=${Math.max(window.innerHeight * 5.5, getScrollDistance())}`,
         pin: true,
         animation: horizontalTween,
         scrub: 1,
@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollTrigger: {
               trigger: pinnedViewport,
               start: "top top",
-              end: () => `+=${Math.max(window.innerHeight * 3.5, getScrollDistance())}`,
+              end: () => `+=${Math.max(window.innerHeight * 5.5, getScrollDistance())}`,
               scrub: 1,
               invalidateOnRefresh: true
             }
@@ -390,65 +390,65 @@ document.addEventListener('DOMContentLoaded', () => {
       // Animate individual step milestones progressively as you scroll
       const milestones = track.querySelectorAll('.step-milestone');
       milestones.forEach((item) => {
+        const stepNum = parseInt(item.getAttribute('data-step') || '1', 10);
         const isTop = item.classList.contains('step-milestone-top');
         const stem = item.querySelector('.step-stem');
         const dot = item.querySelector('.step-dot') || item.querySelector('.rounded-full');
         const content = item.querySelector('.step-content') || item.querySelector('div[class*="space-y-"]');
 
-        // Timeline for this individual milestone triggered by horizontal scroll progress
+        if (stepNum === 1) {
+          // Passo 1 starts directly in the middle of the screen!
+          if (stem) gsap.set(stem, { scaleY: 1 });
+          if (dot) gsap.set(dot, { scale: 1, opacity: 1, boxShadow: "0 0 20px rgba(244,197,66,0.95)" });
+          if (content) gsap.set(content, { opacity: 1, y: 0 });
+          return;
+        }
+
+        // Passos 2, 3, 4, 5, 6:
+        // Start completely hidden and unrevealed
+        if (stem) gsap.set(stem, { scaleY: 0 });
+        if (dot) gsap.set(dot, { scale: 0, opacity: 0 });
+        if (content) gsap.set(content, { opacity: 0, y: isTop ? 28 : -28 });
+
+        // Timeline: animates ONLY when reaching the middle zone of the screen
         const itemTl = gsap.timeline({
           scrollTrigger: {
             trigger: item,
             containerAnimation: horizontalTween,
-            start: "left 92%",  // starts right when entering from the right edge
-            end: "left 52%",    // completes smoothly as it approaches center
+            start: "left 72%",  // remains invisible until entering the central zone
+            end: "left 50%",    // 100% visible and fully formed exactly at the center
             scrub: 0.5
           }
         });
 
         // 1. Stem reveals vertically from axis
         if (stem) {
-          itemTl.fromTo(stem,
-            { scaleY: 0 },
-            {
-              scaleY: 1,
-              ease: "power1.out",
-              duration: 0.4
-            },
-            0
-          );
+          itemTl.to(stem, {
+            scaleY: 1,
+            ease: "power1.out",
+            duration: 0.4
+          }, 0);
         }
 
         // 2. Node dot lights up and scales
         if (dot) {
-          itemTl.fromTo(dot,
-            { scale: 0, opacity: 0.2 },
-            {
-              scale: 1,
-              opacity: 1,
-              boxShadow: "0 0 16px rgba(244,197,66,0.95)",
-              ease: "back.out(1.5)",
-              duration: 0.35
-            },
-            0.1
-          );
+          itemTl.to(dot, {
+            scale: 1,
+            opacity: 1,
+            boxShadow: "0 0 20px rgba(244,197,66,0.95)",
+            ease: "back.out(1.5)",
+            duration: 0.35
+          }, 0.1);
         }
 
         // 3. Text content fades in and glides into position
         if (content) {
-          itemTl.fromTo(content,
-            {
-              opacity: 0,
-              y: isTop ? 28 : -28
-            },
-            {
-              opacity: 1,
-              y: 0,
-              ease: "power2.out",
-              duration: 0.5
-            },
-            0.15
-          );
+          itemTl.to(content, {
+            opacity: 1,
+            y: 0,
+            ease: "power2.out",
+            duration: 0.5
+          }, 0.15);
         }
       });
     });

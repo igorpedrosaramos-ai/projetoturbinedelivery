@@ -932,8 +932,8 @@ button, a {
 }
 
 .steps-grand-stage {
-  width: 340vw;
-  min-width: 4600px;
+  width: 620vw;
+  min-width: 8500px;
   height: calc(100vh - 110px) !important;
   max-height: 480px;
   min-height: 380px;
