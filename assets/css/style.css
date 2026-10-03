@@ -1,0 +1,1060 @@
+/* ==========================================================================
+   Turbine Gestão de Delivery - Design System
+   ========================================================================== */
+
+/* Base Typography & Smoothing */
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #F8F8FA;
+  color: #111113;
+}
+
+/* Exact Navbar Styling matching reference 100% */
+.navbar-exact-header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #EBEBEB;
+  height: 73px;
+}
+
+.nav-exact-link {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.nav-exact-button {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Subtle Entry Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Button Micro-Interactions */
+button, a {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* FAQ Accordion Transitions */
+.faq-content {
+  transition: all 0.25s ease-in-out;
+}
+
+.faq-item.active .faq-content {
+  display: block;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+  color: #EA1D2C;
+}
+
+.faq-item.active {
+  border-color: #EA1D2C;
+  background-color: #FFFFFF;
+}
+
+/* Clean Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F8FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D1D1D8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A5A5AF;
+}
+
+/* Mobile Hamburger Button */
+.mobile-hamburger {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 60;
+}
+
+.mobile-hamburger span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+}
+
+@media (min-width: 768px) {
+  .mobile-hamburger {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   Seção: A Jornada de um Dono de Restaurante (#jornada)
+   Scoped prefix: journey-
+   ========================================================================== */
+.journey-section {
+  background-color: #0B0B0A;
+  color: #F5F5F3;
+  padding: clamp(64px, 8vw, 112px) 24px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #1C1C1A;
+}
+
+.journey-container {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: clamp(36px, 5.5vw, 84px);
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.journey-visual {
+  position: relative;
+  min-width: 0;
+  height: 100%;
+  min-height: 580px;
+  max-height: 660px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #171715;
+}
+
+.journey-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 580px;
+  display: block;
+  object-fit: cover;
+  object-position: 45% center;
+}
+
+/* Fades sutis para integrar a foto ao fundo preto */
+.journey-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent 65%, #0B0B0A 100%),
+              linear-gradient(0deg, rgba(11, 11, 10, 0.45) 0%, transparent 35%);
+}
+
+.journey-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 8px;
+}
+
+.journey-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.journey-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 2.5px;
+  flex: 0 0 auto;
+  background: #F4C542;
+  border-radius: 2px;
+}
+
+.journey-title {
+  max-width: 620px;
+  margin: 0;
+  color: #F5F5F3;
+  font-size: clamp(32px, 3.2vw, 48px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.journey-title span {
+  display: block;
+  color: #F4C542;
+}
+
+.journey-description {
+  max-width: 520px;
+  margin: 16px 0 32px;
+  color: #B7B7B2;
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+/* Timeline */
+.journey-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.journey-timeline-line {
+  position: absolute;
+  top: 20px;
+  bottom: 28px;
+  left: 17px;
+  width: 1px;
+  background: rgba(244, 197, 66, 0.45);
+}
+
+.journey-step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 24px;
+}
+
+.journey-step:last-child {
+  padding-bottom: 0;
+}
+
+.journey-badge {
+  position: relative;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #F4C542;
+  background: #0B0B0A;
+  color: #F4C542;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.journey-icon-wrap {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(244, 197, 66, 0.35);
+  background: #141412;
+  color: #F4C542;
+  flex-shrink: 0;
+}
+
+.journey-step-content {
+  flex: 1;
+  padding-top: 3px;
+}
+
+.journey-step-content h3 {
+  margin: 0 0 4px;
+  color: #F5F5F3;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.journey-step-content p {
+  max-width: 440px;
+  margin: 0;
+  color: #B7B7B2;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* Closing Card */
+.journey-closing {
+  margin-top: 32px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(244, 197, 66, 0.3);
+  background: rgba(18, 18, 16, 0.65);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 600px;
+}
+
+.journey-closing-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.journey-closing-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(244, 197, 66, 0.4);
+  background: #1C1A14;
+  color: #F4C542;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.journey-closing-label {
+  display: block;
+  margin-bottom: 3px;
+  color: #F4C542;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.journey-closing p {
+  margin: 0;
+  color: #D0D0CB;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.journey-closing-arrow {
+  color: rgba(244, 197, 66, 0.6);
+  flex-shrink: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 991px) {
+  .journey-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .journey-visual {
+    height: 380px;
+    min-height: 380px;
+    max-height: 420px;
+  }
+
+  .journey-photo {
+    min-height: 380px;
+    object-position: 45% 30%;
+  }
+
+  .journey-visual::after {
+    background: linear-gradient(0deg, #0B0B0A 5%, transparent 60%);
+  }
+
+  .journey-title {
+    font-size: 34px;
+  }
+
+  .journey-closing {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .journey-section {
+    padding: 56px 18px;
+  }
+
+  .journey-visual {
+    height: 320px;
+    min-height: 320px;
+  }
+
+  .journey-step {
+    gap: 12px;
+  }
+
+  .journey-badge {
+    width: 30px;
+    height: 30px;
+    font-size: 11px;
+  }
+
+  .journey-icon-wrap {
+    width: 40px;
+    height: 40px;
+  }
+
+  .journey-timeline-line {
+    left: 15px;
+  }
+
+  .journey-closing {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+}
+
+/* ==========================================================================
+   Seção: Por Que Escolher a Turbine? (#sobre) - Card Stack Interativo
+   Scoped prefix: why- & cardstack-
+   ========================================================================== */
+.why-section {
+  background-color: #0B0B0A;
+  color: #F5F5F3;
+  padding: clamp(64px, 8vw, 120px) 24px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #1C1C1A;
+}
+
+/* Sutil aura luminosa dourada ao fundo */
+.why-section::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: -5%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(244, 197, 66, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.why-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  position: relative;
+  z-index: 10;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .why-grid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(48px, 6vw, 92px);
+    align-items: center;
+  }
+}
+
+/* Coluna Esquerda: Apenas o Título */
+.why-header-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.why-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.why-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 2.5px;
+  flex: 0 0 auto;
+  background: #F4C542;
+  border-radius: 2px;
+}
+
+.why-title {
+  margin: 0;
+  color: #F5F5F3;
+  font-size: clamp(40px, 4.6vw, 68px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  min-height: 2.2em; /* Preserva o layout fixo sem qualquer salto durante a digitação */
+}
+
+#twPart1 {
+  color: #F5F5F3;
+}
+
+#twPart2 {
+  color: #F4C542;
+}
+
+/* Cursor da animação máquina de escrever */
+.tw-cursor {
+  display: inline-block;
+  color: #F4C542 !important;
+  font-weight: 300;
+  margin-left: 3px;
+  animation: twPulse 0.8s infinite;
+  user-select: none;
+}
+
+@keyframes twPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   Card Stack Deck (Estilo idêntico à referência media_1790984311752.png)
+   ========================================================================== */
+.cardstack-wrapper {
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardstack-stage {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  perspective: 1200px;
+}
+
+.cardstack-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 415px;
+  border-radius: 26px;
+  background: #141412;
+  border: 1px solid rgba(244, 197, 66, 0.2);
+  box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  transform-origin: center bottom;
+  transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.35s ease,
+              box-shadow 0.35s ease,
+              border-color 0.3s ease;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: 34px 30px 22px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Linha luminosa de reflexo sutil no topo do card */
+.cardstack-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(244, 197, 66, 0.4), transparent);
+  pointer-events: none;
+}
+
+/* Camadas de empilhamento com profundidade física */
+.cardstack-card[data-pos="0"] {
+  transform: translate3d(0, 0, 0) scale(1);
+  z-index: 10;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cardstack-card[data-pos="0"]:hover {
+  border-color: rgba(244, 197, 66, 0.45);
+  box-shadow: 0 30px 60px -14px rgba(0, 0, 0, 0.9), 0 0 24px rgba(244, 197, 66, 0.1);
+}
+
+.cardstack-card[data-pos="1"] {
+  transform: translate3d(0, 16px, -20px) scale(0.95);
+  z-index: 9;
+  opacity: 0.86;
+  pointer-events: none;
+  border-color: rgba(244, 197, 66, 0.15);
+}
+
+.cardstack-card[data-pos="2"] {
+  transform: translate3d(0, 32px, -40px) scale(0.90);
+  z-index: 8;
+  opacity: 0.58;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.cardstack-card[data-pos="3"] {
+  transform: translate3d(0, 48px, -60px) scale(0.85);
+  z-index: 7;
+  opacity: 0.32;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0.04);
+}
+
+.cardstack-card[data-pos="hidden"] {
+  transform: translate3d(0, 56px, -80px) scale(0.80);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Camadas de fundo com borda física limpa (sem vazar texto no peek inferior) */
+.cardstack-card:not([data-pos="0"]) .card-bottom-bar,
+.cardstack-card:not([data-pos="0"]) .card-feature-list {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Animações de descarte fluido do topo */
+.cardstack-card.card-flick-right {
+  transform: translate3d(115%, -25px, 30px) rotate(14deg) scale(0.96) !important;
+  opacity: 0 !important;
+  pointer-events: none;
+  transition: transform 0.38s cubic-bezier(0.35, 0, 0.25, 1), opacity 0.3s ease !important;
+}
+
+.cardstack-card.card-flick-left {
+  transform: translate3d(-115%, -25px, 30px) rotate(-14deg) scale(0.96) !important;
+  opacity: 0 !important;
+  pointer-events: none;
+  transition: transform 0.38s cubic-bezier(0.35, 0, 0.25, 1), opacity 0.3s ease !important;
+}
+
+/* Topo do card (Badge e Ícone) */
+.card-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.card-category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  background: rgba(244, 197, 66, 0.1);
+  border: 1px solid rgba(244, 197, 66, 0.25);
+  color: #F4C542;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card-icon-pill {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #1C1A14;
+  border: 1px solid rgba(244, 197, 66, 0.35);
+  color: #F4C542;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body-title {
+  margin: 0 0 12px;
+  color: #FFFFFF;
+  font-size: clamp(23px, 2.4vw, 28px);
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+}
+
+.card-body-desc {
+  margin: 0 0 20px;
+  color: #D6D6D0;
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+
+.card-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: #F5F5F3;
+  font-weight: 500;
+}
+
+.card-feature-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(244, 197, 66, 0.18);
+  color: #F4C542;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-feature-check svg {
+  width: 13px;
+  height: 13px;
+  stroke-width: 2.8;
+}
+
+/* Rodapé interno do card */
+.card-bottom-bar {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 13px;
+  color: #A4A49E;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* Controles sob o Deck (Exatamente como media_1790984311752.png) */
+.cardstack-controls-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.cardstack-controls {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(18, 18, 16, 0.7);
+  padding: 6px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.cardstack-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  outline: none;
+}
+
+/* Botão da esquerda: Anterior (Estilo pill com borda suave) */
+.cardstack-btn-secondary {
+  background: #181816;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #D4D4D0;
+}
+
+.cardstack-btn-secondary:hover {
+  background: #242420;
+  border-color: rgba(244, 197, 66, 0.35);
+  color: #FFFFFF;
+}
+
+/* Botão central: Reiniciar / Undo */
+.cardstack-btn-icon {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #8C8C86;
+  padding: 10px 14px;
+  gap: 6px;
+}
+
+.cardstack-btn-icon:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #F5F5F3;
+  border-radius: 9999px;
+}
+
+/* Botão da direita: Próximo (Pill Dourado com texto preto sólido) */
+.cardstack-btn-primary {
+  background: #F4C542;
+  color: #0B0B0A;
+  font-weight: 700;
+  border: 1px solid #F4C542;
+  box-shadow: 0 4px 14px rgba(244, 197, 66, 0.25);
+}
+
+.cardstack-btn-primary:hover {
+  background: #FFE045;
+  box-shadow: 0 6px 20px rgba(244, 197, 66, 0.4);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .why-section {
+    padding: 56px 18px;
+  }
+  .cardstack-stage {
+    height: 480px;
+  }
+  .cardstack-card {
+    height: 420px;
+    padding: 26px 20px 20px;
+  }
+  .card-body-title {
+    font-size: 21px;
+  }
+  .card-body-desc {
+    font-size: 14.5px;
+    line-height: 1.55;
+    margin-bottom: 16px;
+    color: #D6D6D0;
+  }
+  .card-feature-item {
+    font-size: 13.5px;
+    gap: 10px;
+    color: #F5F5F3;
+  }
+  .card-feature-check {
+    width: 20px;
+    height: 20px;
+  }
+  .cardstack-btn {
+    padding: 10px 18px;
+    font-size: 13px;
+    gap: 6px;
+  }
+}
+
+/* ==========================================================================
+   Seção: 5 Passos do Sucesso Turbine
+   1. Lead-in (De cima para baixo)
+   2. Pinned Horizontal Timeline (Grande assim, editorial, sem caixas)
+   3. Lead-out (Finalizar para baixo)
+   ========================================================================== */
+.steps-timeline-section {
+  position: relative;
+  width: 100%;
+  background: #0B0B0A;
+}
+
+/* 1. Lead-in */
+.steps-leadin {
+  position: relative;
+  z-index: 2;
+}
+
+/* 2. Pinned Horizontal Viewport - Linha do Tempo Editorial Aberta */
+.steps-pinned-viewport {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  background: #0B0B0A;
+}
+
+.steps-grand-slider {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  will-change: transform;
+}
+
+.steps-grand-stage {
+  width: 340vw;
+  min-width: 4600px;
+  height: calc(100vh - 110px) !important;
+  max-height: 480px;
+  min-height: 380px;
+}
+
+/* Linha Central Horizontal */
+.steps-grand-axis {
+  height: 2px;
+}
+
+.steps-axis-fill {
+  transition: width 0.05s linear;
+}
+
+/* Trilhos Superior e Inferior */
+.steps-rail-top {
+  border-bottom: 1px solid rgba(244, 197, 66, 0.15);
+}
+
+.steps-rail-bottom {
+  border-top: 1px solid rgba(244, 197, 66, 0.15);
+}
+
+/* Milestones Editoriais Abertos - GSAP Scrub Ready */
+.step-milestone {
+  will-change: transform, opacity;
+}
+
+.step-stem {
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+.step-milestone-bottom .step-stem {
+  transform-origin: top center;
+  will-change: transform;
+}
+
+.step-dot {
+  will-change: transform, opacity;
+}
+
+.step-content {
+  will-change: transform, opacity;
+}
+
+/* Mobile & Tablets (< 1024px) */
+@media (max-width: 1023px) {
+  .steps-pinned-viewport {
+    height: auto;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 0 40px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .steps-pinned-viewport::-webkit-scrollbar {
+    display: none;
+  }
+  .steps-grand-slider {
+    gap: 20px;
+    padding: 0 20px;
+    height: auto;
+  }
+  .steps-grand-stage {
+    width: max-content;
+    height: auto;
+    display: flex;
+    flex-direction: row !important;
+    gap: 20px;
+  }
+  .steps-grand-axis {
+    display: none !important;
+  }
+  .steps-rail,
+  .steps-rail > div:not(.step-milestone):not(.steps-title-card) {
+    display: contents !important;
+  }
+  .steps-title-card,
+  .steps-rail-bottom > div:first-child {
+    display: none !important;
+  }
+  .step-milestone {
+    width: 85vw;
+    max-width: 340px;
+    height: auto;
+    min-width: 290px;
+    padding: 24px 20px !important;
+    background: #141412;
+    border: 1px solid rgba(244, 197, 66, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+  }
+  .step-milestone-top, .step-milestone-bottom {
+    justify-content: flex-start !important;
+  }
+  .step-milestone .step-stem,
+  .step-milestone .rounded-full {
+    display: none !important;
+  }
+  .step-milestone > div:last-child {
+    padding-left: 0 !important;
+    margin: 0 !important;
+  }
+  .step-milestone h3 {
+    font-size: 20px !important;
+  }
+  .step-milestone p {
+    font-size: 14px !important;
+  }
+  .step-milestone[data-step="1"] { order: 1; }
+  .step-milestone[data-step="2"] { order: 2; }
+  .step-milestone[data-step="3"] { order: 3; }
+  .step-milestone[data-step="4"] { order: 4; }
+  .step-milestone[data-step="5"] { order: 5; }
+  .step-milestone[data-step="6"] { order: 6; }
+}
+
+
+
+
+

@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turbine Gestão de Delivery | iFood, KeeTa e 99Food</title>
+  <meta name="description" content="Bem-vindo à transformação do seu delivery. Especialista com vasta experiência no setor de gestão de restaurantes no iFood, KeeTa e 99Food.">
+
+  <!-- Favicon Oficial Turbine Gestão de Delivery -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#F8F8FA',
+              card: '#FFFFFF',
+              dark: '#111113',
+              darkCard: '#1A1A1E',
+              border: '#E8E8EE',
+              borderDark: '#2B2B32',
+              text: '#111113',
+              muted: '#6B6B76',
+              red: '#EA1D2C',
+              redHover: '#D41523',
+              redLight: '#FEECEE',
+              yellow: '#FFD100',
+              yellowLight: '#FFFBEA',
+              green: '#00875A',
+              greenLight: '#E3FCEF'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    @media (min-width: 768px) {
+      #mobileMenuBtn {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-brand-bg text-brand-text font-sans antialiased selection:bg-brand-red selection:text-white">
+
+  <!-- ============================================== -->
+  <!-- MAIN NAVIGATION BAR (OFFICIAL TURBINE DARK)   -->
+  <!-- ============================================== -->
+  <!-- ============================================== -->
+  <!-- MAIN NAVIGATION BAR (OFFICIAL TURBINE DARK)   -->
+  <!-- ============================================== -->
+  <header class="absolute top-0 left-0 w-full z-50 bg-transparent border-none">
+    <div class="w-full max-w-[1240px] mx-auto h-[80px] sm:h-[88px] px-6 sm:px-10 lg:px-12 flex items-center justify-between">
+      
+      <!-- Logo: Official TURBINE GESTÃO DE DELIVERY -->
+      <a href="#inicio" class="flex items-center flex-shrink-0">
+        <img src="assets/images/logo-turbine-white.png" alt="Turbine Gestão de Delivery" class="h-[36px] sm:h-[40px] lg:h-[42px] w-auto object-contain" style="height: 38px; width: auto;">
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-7 lg:gap-9">
+        <a href="#como-funciona" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Como funciona</a>
+        <a href="#desafios" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Serviços</a>
+        <a href="#resultados" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Resultados</a>
+        <a href="#sobre" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Sobre</a>
+        <a href="#contato" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Contato</a>
+      </nav>
+
+      <!-- Right Actions (Desktop CTA & Mobile CTA + Hamburger) -->
+      <div class="flex items-center gap-2.5 sm:gap-4">
+        <!-- Desktop CTA Button -->
+        <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20turbinar%20meu%20delivery." target="_blank"
+           class="hidden md:inline-flex items-center justify-center h-[38px] px-6 bg-[#FFE045] hover:bg-[#F5D830] text-[#000000] text-[13px] font-bold rounded-full transition-all gap-1.5 shadow-md hover:shadow-lg whitespace-nowrap">
+          <span>Quero turbinar meu delivery</span>
+          <span class="text-sm font-bold">→</span>
+        </a>
+
+        <!-- Mobile Compact CTA Button (matching mobile reference layout) -->
+        <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20turbinar%20meu%20delivery." target="_blank"
+           class="md:hidden inline-flex items-center justify-center bg-[#FFE045] hover:bg-[#F5D830] text-[#000000] text-[10px] sm:text-[11px] font-bold rounded-full px-3 py-1.5 leading-[1.15] text-center shadow-sm whitespace-nowrap">
+          <span>Quero turbinar<br>meu delivery →</span>
+        </a>
+
+        <!-- Mobile Menu Button (Hamburger) - hidden on desktop, visible on mobile -->
+        <button id="mobileMenuBtn" class="flex md:hidden p-1.5 text-white hover:text-[#FFE045] focus:outline-none transition-colors items-center justify-center flex-shrink-0" style="width: 36px; height: 36px; background: transparent; border: none; cursor: pointer;" aria-label="Abrir Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px; display: block;">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden bg-[#0A0A0E]/95 backdrop-blur-md border-b border-white/10 px-6 py-5 space-y-4">
+      <a href="#como-funciona" class="mobile-nav-link block text-sm font-medium text-white/80 hover:text-white">Como funciona</a>
+      <a href="#desafios" class="mobile-nav-link block text-sm font-medium text-white/80 hover:text-white">Serviços</a>
+      <a href="#resultados" class="mobile-nav-link block text-sm font-medium text-white/80 hover:text-white">Resultados</a>
+      <a href="#sobre" class="mobile-nav-link block text-sm font-medium text-white/80 hover:text-white">Sobre</a>
+      <a href="#contato" class="mobile-nav-link block text-sm font-medium text-white/80 hover:text-white">Contato</a>
+      <div class="pt-2">
+        <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20turbinar%20meu%20delivery." target="_blank"
+           class="inline-flex items-center justify-center w-full h-[40px] bg-[#FFE045] hover:bg-[#F5D830] text-[#000000] text-xs font-bold rounded-full transition-all gap-1.5">
+          <span>Quero turbinar meu delivery</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================== -->
+  <!-- HERO: FULL WIDTH RESPONSIVE LANDING SECTION    -->
+  <!-- ============================================== -->
+  <section id="inicio" class="relative bg-[#050505] w-full min-h-[660px] sm:min-h-[700px] lg:min-h-[740px] xl:min-h-[780px] overflow-hidden flex flex-col justify-between">
+    
+    <!-- PHOTO LAYER: Anchored to right on Desktop, full-bleed on Mobile -->
+    <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
+      
+      <!-- DESKTOP PHOTO LAYER (>= 768px): Anchored to right of max-w-[1240px] container -->
+      <div class="hidden md:block max-w-[1240px] mx-auto h-full relative">
+        <div class="absolute right-0 top-0 bottom-0 h-full flex items-center justify-end">
+          <img src="assets/images/hero-murillo-bg.jpg" 
+               alt="Murillo Carregari - Turbine Gestão de Delivery" 
+               class="h-full w-auto max-w-none object-contain select-none"
+               style="aspect-ratio: 2528 / 1686;">
+          
+          <!-- Smooth horizontal gradient fade on left edge into #050505 -->
+          <div class="absolute inset-y-0 left-0 w-44 lg:w-60 bg-gradient-to-r from-[#050505] via-[#050505]/75 to-transparent"></div>
+          
+          <!-- Soft top fade behind header for crisp navigation readability -->
+          <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#050505]/35 to-transparent"></div>
+          
+          <!-- Soft bottom fade into platform bar -->
+          <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#050505] to-transparent"></div>
+
+          <!-- Badge Oficial Murillo Carregari (Desktop) -->
+          <div class="absolute bottom-20 lg:bottom-24 right-6 lg:right-10 xl:right-16 z-20 pointer-events-auto">
+            <div class="flex items-center gap-3 bg-[#090A0D]/90 backdrop-blur-md border border-white/10 border-l-[3px] border-l-[#FFE045] rounded-xl px-4 py-2.5 shadow-2xl">
+              <div class="flex flex-col">
+                <span class="text-white font-bold text-[14px] lg:text-[15px] tracking-tight leading-tight">
+                  Murillo Carregari
+                </span>
+                <span class="text-[#FFE045] font-semibold text-[10.5px] lg:text-[11.5px] tracking-wider uppercase mt-0.5 leading-tight">
+                  Gestor de Performance de Delivery
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILE PHOTO LAYER (< 768px): Photo anchored to right side with text contrast overlay -->
+      <div class="md:hidden absolute inset-0 w-full h-full">
+        <img src="assets/images/hero-murillo-bg.jpg" 
+             alt="Murillo Carregari - Turbine Gestão de Delivery" 
+             class="w-full h-full object-cover object-[67%_top] select-none">
+        
+        <!-- Dark gradient on left to guarantee 100% crisp legibility of headline & copy, fading out before Murillo's face -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#050505] from-15% via-[#050505]/75 via-42% to-transparent"></div>
+        <!-- Soft top shadow behind navbar -->
+        <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#050505]/75 via-[#050505]/20 to-transparent"></div>
+        <!-- Soft bottom fade into platform bar -->
+        <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#050505] to-transparent"></div>
+
+        <!-- Badge Oficial Murillo Carregari (Mobile) -->
+        <div class="absolute bottom-20 sm:bottom-22 right-3 sm:right-6 z-20 pointer-events-auto">
+          <div class="flex items-center gap-2.5 bg-[#090A0D]/95 backdrop-blur-md border border-white/10 border-l-[3px] border-l-[#FFE045] rounded-lg px-3 py-1.5 shadow-2xl">
+            <div class="flex flex-col">
+              <span class="text-white font-bold text-[11.5px] sm:text-[12.5px] tracking-tight leading-tight">
+                Murillo Carregari
+              </span>
+              <span class="text-[#FFE045] font-semibold text-[8.5px] sm:text-[9.5px] tracking-wider uppercase mt-0.5 leading-tight">
+                Gestor de Performance de Delivery
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Main Hero Content Container -->
+    <div class="relative z-10 w-full max-w-[1240px] mx-auto px-5 sm:px-10 lg:px-12 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-8 md:pb-12 flex-1 flex flex-col justify-center">
+      <div class="max-w-[270px] xs:max-w-[290px] sm:max-w-md md:max-w-xl lg:max-w-2xl space-y-4 sm:space-y-6 md:space-y-7">
+        
+        <!-- Eyebrow -->
+        <div class="flex items-start gap-2.5 sm:gap-3">
+          <span class="w-6 sm:w-8 h-[2px] bg-[#FFE045] rounded-full inline-block mt-1.5 flex-shrink-0"></span>
+          <span class="text-[10px] sm:text-[11.5px] font-semibold text-white uppercase tracking-[0.16em] sm:tracking-[0.2em] leading-tight">
+            GESTÃO PROFISSIONAL<br class="block sm:hidden"> DE DELIVERY
+          </span>
+        </div>
+
+        <!-- H1 Headline with exact line breaks from reference -->
+        <h1 class="text-[27px] xs:text-[31px] sm:text-4xl md:text-5xl lg:text-[52px] font-extrabold text-white tracking-tight leading-[1.12] sm:leading-[1.1]">
+          Seu delivery não<br>precisa ser mais uma<br>coisa para você<br><span class="text-[#FFE045]">administrar.</span>
+        </h1>
+
+        <!-- Subtitle with exact crisp styling -->
+        <p class="text-[12.5px] xs:text-[13.5px] sm:text-[14.5px] md:text-[15.5px] text-[#D4D4D8] font-normal leading-[1.55] sm:leading-[1.65]">
+          A Turbine Gestão Delivery assume a operação do seu cardápio nos principais aplicativos, otimizando preços, imagens, descrições, promoções e posicionamento para aumentar suas vendas.
+        </p>
+
+        <!-- CTA Button + Social Proof -->
+        <div class="pt-1 sm:pt-2 flex flex-col gap-4 sm:gap-6">
+          <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20turbinar%20meu%20delivery." target="_blank"
+             class="inline-flex items-center justify-center h-[42px] sm:h-[46px] px-6 sm:px-8 bg-[#FFE045] hover:bg-[#F5D830] text-[#000000] text-[12.5px] sm:text-[13.5px] font-bold rounded-full transition-all shadow-md hover:shadow-lg gap-2 whitespace-nowrap self-start">
+            <span>Quero turbinar meu delivery</span>
+            <span class="text-sm sm:text-base font-bold">→</span>
+          </a>
+
+          <!-- Social Proof with yellow vertical bar matching reference -->
+          <div class="flex items-center gap-3 border-l-2 border-[#FFE045] pl-3 py-0.5">
+            <div class="flex flex-col">
+              <span class="text-[13px] sm:text-sm font-bold text-white leading-tight">+30 empresas</span>
+              <span class="text-[11px] sm:text-[12px] text-[#A1A1AA] leading-tight mt-0.5">já confiam na Turbine</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Platforms Footer Bar -->
+    <div class="relative z-10 w-full border-t border-white/10 bg-[#050505]/70 backdrop-blur-sm">
+      <div class="max-w-[1240px] mx-auto px-6 sm:px-10 lg:px-12 py-4 sm:py-5 pb-6 sm:pb-5 flex items-center gap-3 sm:gap-8 overflow-x-auto">
+        
+        <span class="text-[9.5px] sm:text-[10.5px] font-semibold text-white/50 uppercase tracking-[0.14em] sm:tracking-[0.16em] leading-tight flex-shrink-0">
+          ATUAMOS NAS<br class="hidden sm:inline"> PRINCIPAIS PLATAFORMAS
+        </span>
+
+        <div class="h-5 sm:h-6 w-[1px] bg-white/15 flex-shrink-0"></div>
+
+        <!-- iFood Logo -->
+        <img src="assets/images/logo-ifood-white.png" alt="iFood" class="h-4 sm:h-6 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity flex-shrink-0">
+
+        <div class="h-5 sm:h-6 w-[1px] bg-white/15 flex-shrink-0"></div>
+
+        <!-- 99 Food Logo -->
+        <img src="assets/images/logo-99food-white.png" alt="99 Food" class="h-3.5 sm:h-5 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity flex-shrink-0">
+
+        <div class="h-5 sm:h-6 w-[1px] bg-white/15 flex-shrink-0"></div>
+
+        <!-- Keeta Logo -->
+        <img src="assets/images/logo-keeta-white.png" alt="Keeta" class="h-3.5 sm:h-5 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity flex-shrink-0">
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================== -->
+  <!-- SEÇÃO 2: DIAGNÓSTICO & 4 PRINCIPAIS PROBLEMAS  -->
+  <!-- ============================================== -->
+  <section id="desafios" class="pt-20 pb-20 md:pt-24 md:pb-24 lg:pt-28 lg:pb-32 bg-[#0D0D0D] border-b border-[#222222] relative overflow-hidden">
+    
+    <!-- Detalhe Gráfico Amarelo no canto inferior esquerdo (fiel à referência) -->
+    <div class="absolute -bottom-10 -left-6 w-[360px] lg:w-[440px] h-[480px] pointer-events-none select-none z-0 hidden sm:block">
+      <svg viewBox="0 0 440 480" fill="none" class="w-full h-full">
+        <!-- Faceta principal amarelo quente #FFD21F -->
+        <polygon points="0,120 380,310 260,480 0,480" fill="#FFD21F" opacity="0.95"/>
+        <!-- Faceta de profundidade dourada -->
+        <polygon points="0,240 260,370 140,480 0,480" fill="#CE9F0A" opacity="0.88"/>
+      </svg>
+    </div>
+
+    <div class="max-w-[1360px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 relative z-10">
+      
+      <div class="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-12 xl:gap-16">
+        
+        <!-- Coluna da Esquerda: Eyebrow, Headline, Subtexto, Mockup Smartphone + Anotação -->
+        <div class="w-full lg:w-[45%] xl:w-[44%] flex-shrink-0 flex flex-col justify-start relative z-10">
+          
+          <!-- Eyebrow com traço amarelo -->
+          <div class="flex items-center gap-3.5 mb-5 sm:mb-6">
+            <span class="w-8 h-[3.5px] bg-[#FFD21F] rounded-full inline-block flex-shrink-0"></span>
+            <span class="text-[#AEB8C8] text-[11px] sm:text-[12px] font-bold uppercase tracking-[0.16em] select-none">
+              GESTÃO DE DELIVERY &nbsp;•&nbsp; DIAGNÓSTICO
+            </span>
+          </div>
+
+          <!-- Headline H2 com quebras e amarelo destacados -->
+          <h2 class="text-3xl sm:text-4xl lg:text-[44px] xl:text-[49px] font-extrabold text-white tracking-[-0.03em] leading-[1.14] sm:leading-[1.15] mb-5 sm:mb-6">
+            Seu restaurante<br>
+            poderia vender mais.<br>
+            O que está <span class="text-[#FFD21F]">travando</span><br>
+            <span class="text-[#FFD21F]">os pedidos?</span>
+          </h2>
+
+          <!-- Subtexto -->
+          <p class="text-[#9CA3AF] text-[15px] sm:text-[16px] lg:text-[16.5px] leading-[1.55] max-w-[460px] mb-6 lg:mb-10">
+            Do cardápio às promoções, identificamos os pontos que prejudicam o desempenho da sua operação nos aplicativos de delivery.
+          </p>
+
+          <!-- Smartphone Mockup + Anotação Manuscrita Amarela -->
+          <div class="relative w-full pt-4 lg:pt-6 flex items-start justify-start">
+            
+            <!-- Mockup do Smartphone Inclinado (-12deg) com Screenshot Real do iFood -->
+            <div class="relative w-[210px] sm:w-[260px] lg:w-[320px] xl:w-[340px] -rotate-[10deg] lg:-rotate-[12deg] origin-top-left lg:translate-y-2 xl:translate-y-4 -mb-10 lg:-mb-24 z-10 -ml-2 sm:ml-2 group">
+              <div class="bg-[#18181B] p-[7px] sm:p-[10px] xl:p-[11px] rounded-[38px] sm:rounded-[48px] xl:rounded-[52px] border-2 border-[#2C2C32] shadow-[-26px_34px_70px_rgba(0,0,0,0.92),0_0_0_1px_rgba(255,255,255,0.08)] relative">
+                
+                <!-- Tela do Smartphone com Screenshot Real do iFood -->
+                <div class="rounded-[32px] sm:rounded-[40px] overflow-hidden bg-black aspect-[9/19.5] relative shadow-inner">
+                  <img src="assets/images/ifood-home.png" 
+                       alt="Cardápio real do iFood na palma da sua mão" 
+                       class="w-full h-full object-cover object-top select-none pointer-events-none block">
+                  <!-- Reflexo óptico de vidro sutil -->
+                  <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent pointer-events-none"></div>
+                </div>
+
+                <!-- Botões laterais discretos da carcaça metálica -->
+                <div class="absolute -left-[3px] top-18 sm:top-24 w-[2px] h-6 sm:h-9 bg-[#383840] rounded-l-sm"></div>
+                <div class="absolute -left-[3px] top-28 sm:top-36 w-[2px] h-6 sm:h-9 bg-[#383840] rounded-l-sm"></div>
+                <div class="absolute -right-[3px] top-22 sm:top-28 w-[2px] h-9 sm:h-14 bg-[#383840] rounded-r-sm"></div>
+              </div>
+            </div>
+
+            <!-- Anotação Manuscrita Amarela com Seta Curva (Desktop / Tablet) -->
+            <div class="hidden sm:flex absolute sm:left-[280px] lg:left-[380px] xl:left-[415px] top-[26%] sm:top-[28%] lg:top-[30%] xl:top-[32%] z-20 flex-col items-start select-none pointer-events-none">
+              <span class="font-['Caveat',cursive] text-[#FFD21F] text-[20px] lg:text-[23px] xl:text-[26px] font-bold leading-[1.15] -rotate-[4deg] drop-shadow-sm whitespace-nowrap">
+                Aumentamos sua<br>
+                visibilidade
+              </span>
+              <!-- Seta curva desenhada apontando para o celular -->
+              <svg class="w-12 h-10 lg:w-14 lg:h-12 xl:w-15 xl:h-12 text-[#FFD21F] mt-1.5 ml-2 sm:ml-4 -rotate-[6deg]" viewBox="0 0 54 44" fill="none">
+                <path d="M42 4 C40 18, 28 32, 10 34" stroke="#FFD21F" stroke-width="2.3" stroke-linecap="round"/>
+                <path d="M18 28 L9 34 L17 40" stroke="#FFD21F" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <!-- Anotação Manuscrita Mobile (Sem sobrepor a tela do celular) -->
+            <div class="flex sm:hidden absolute right-2 top-[32%] z-20 flex-col items-center select-none pointer-events-none">
+              <span class="font-['Caveat',cursive] text-[#FFD21F] text-[18px] font-bold leading-[1.15] -rotate-[4deg] drop-shadow-sm text-center">
+                Aumentamos<br>sua visibilidade
+              </span>
+              <svg class="w-9 h-8 text-[#FFD21F] mt-1 -rotate-[12deg]" viewBox="0 0 54 44" fill="none">
+                <path d="M42 4 C40 18, 28 32, 10 34" stroke="#FFD21F" stroke-width="2.3" stroke-linecap="round"/>
+                <path d="M18 28 L9 34 L17 40" stroke="#FFD21F" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Coluna da Direita: 4 Problemas Numerados Editoriais + Rodapé -->
+        <div class="w-full lg:w-[55%] xl:w-[56%] flex flex-col justify-start z-10 lg:pt-2">
+          
+          <!-- Lista Editorial de 4 Problemas -->
+          <div class="flex flex-col">
+            
+            <!-- Problema 01: Seu restaurante não aparece -->
+            <div class="py-7 sm:py-8 lg:py-8 xl:py-9 border-b border-white/10 flex items-start justify-between gap-4 sm:gap-6 group transition-colors">
+              <div class="w-14 h-14 sm:w-16 sm:h-16 lg:w-[62px] lg:h-[62px] rounded-full border border-white/15 bg-white/[0.02] flex items-center justify-center flex-shrink-0 group-hover:border-[#FFD21F]/40 group-hover:bg-[#FFD21F]/5 transition-all duration-300 mt-1">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-[#FFD21F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <span class="text-[#FFD21F] font-bold text-xs sm:text-[13px] tracking-wider uppercase block mb-1">01</span>
+                <h3 class="text-xl sm:text-[22px] lg:text-[24px] font-bold text-white tracking-tight leading-snug mb-1.5 sm:mb-2">
+                  Seu restaurante não <span class="text-[#FFD21F]">aparece</span>
+                </h3>
+                <p class="text-[#9CA3AF] text-[14.5px] sm:text-[15.5px] lg:text-[16px] leading-[1.55] max-w-[560px]">
+                  Visibilidade baixa, posicionamento e oportunidades de exposição que podem estar sendo perdidas.
+                </p>
+              </div>
+              <div class="hidden sm:flex items-center text-white/20 group-hover:text-[#FFD21F] group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 pt-3">
+                <i data-lucide="chevron-right" class="w-5 h-5 stroke-[2]"></i>
+              </div>
+            </div>
+
+            <!-- Problema 02: Pedidos cancelados viram prejuízo -->
+            <div class="py-7 sm:py-8 lg:py-8 xl:py-9 border-b border-white/10 flex items-start justify-between gap-4 sm:gap-6 group transition-colors">
+              <div class="w-14 h-14 sm:w-16 sm:h-16 lg:w-[62px] lg:h-[62px] rounded-full border border-white/15 bg-white/[0.02] flex items-center justify-center flex-shrink-0 group-hover:border-[#FFD21F]/40 group-hover:bg-[#FFD21F]/5 transition-all duration-300 mt-1">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-[#FFD21F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14"/>
+                  <polyline points="3.29 7 12 12 20.71 7"/>
+                  <line x1="12" y1="12" x2="12" y2="22"/>
+                  <circle cx="18.5" cy="18.5" r="3.5" fill="#0D0D0D" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="m17 17 3 3m0-3-3 3" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <span class="text-[#FFD21F] font-bold text-xs sm:text-[13px] tracking-wider uppercase block mb-1">02</span>
+                <h3 class="text-xl sm:text-[22px] lg:text-[24px] font-bold text-white tracking-tight leading-snug mb-1.5 sm:mb-2">
+                  Pedidos cancelados viram <span class="text-[#FFD21F]">prejuízo</span>
+                </h3>
+                <p class="text-[#9CA3AF] text-[14.5px] sm:text-[15.5px] lg:text-[16px] leading-[1.55] max-w-[560px]">
+                  Investigue as causas dos cancelamentos e os pontos que precisam de correção na operação.
+                </p>
+              </div>
+              <div class="hidden sm:flex items-center text-white/20 group-hover:text-[#FFD21F] group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 pt-3">
+                <i data-lucide="chevron-right" class="w-5 h-5 stroke-[2]"></i>
+              </div>
+            </div>
+
+            <!-- Problema 03: Avaliações afastam novos clientes -->
+            <div class="py-7 sm:py-8 lg:py-8 xl:py-9 border-b border-white/10 flex items-start justify-between gap-4 sm:gap-6 group transition-colors">
+              <div class="w-14 h-14 sm:w-16 sm:h-16 lg:w-[62px] lg:h-[62px] rounded-full border border-white/15 bg-white/[0.02] flex items-center justify-center flex-shrink-0 group-hover:border-[#FFD21F]/40 group-hover:bg-[#FFD21F]/5 transition-all duration-300 mt-1">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-[#FFD21F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  <polygon points="12 7.2 13.1 9.7 15.8 10 13.8 11.8 14.3 14.4 12 13 9.7 14.4 10.2 11.8 8.2 10 10.9 9.7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <span class="text-[#FFD21F] font-bold text-xs sm:text-[13px] tracking-wider uppercase block mb-1">03</span>
+                <h3 class="text-xl sm:text-[22px] lg:text-[24px] font-bold text-white tracking-tight leading-snug mb-1.5 sm:mb-2">
+                  Avaliações afastam <span class="text-[#FFD21F]">novos clientes</span>
+                </h3>
+                <p class="text-[#9CA3AF] text-[14.5px] sm:text-[15.5px] lg:text-[16px] leading-[1.55] max-w-[560px]">
+                  Entenda as reclamações recorrentes e onde a experiência do cliente precisa melhorar.
+                </p>
+              </div>
+              <div class="hidden sm:flex items-center text-white/20 group-hover:text-[#FFD21F] group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 pt-3">
+                <i data-lucide="chevron-right" class="w-5 h-5 stroke-[2]"></i>
+              </div>
+            </div>
+
+            <!-- Problema 04: O cardápio recebe visitas, mas não convence -->
+            <div class="py-7 sm:py-8 lg:py-8 xl:py-9 border-b border-white/10 flex items-start justify-between gap-4 sm:gap-6 group transition-colors">
+              <div class="w-14 h-14 sm:w-16 sm:h-16 lg:w-[62px] lg:h-[62px] rounded-full border border-white/15 bg-white/[0.02] flex items-center justify-center flex-shrink-0 group-hover:border-[#FFD21F]/40 group-hover:bg-[#FFD21F]/5 transition-all duration-300 mt-1">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-[#FFD21F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+                  <path d="M7 2v20"/>
+                  <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <span class="text-[#FFD21F] font-bold text-xs sm:text-[13px] tracking-wider uppercase block mb-1">04</span>
+                <h3 class="text-xl sm:text-[22px] lg:text-[24px] font-bold text-white tracking-tight leading-snug mb-1.5 sm:mb-2">
+                  O cardápio recebe visitas, mas <span class="text-[#FFD21F]">não convence</span>
+                </h3>
+                <p class="text-[#9CA3AF] text-[14.5px] sm:text-[15.5px] lg:text-[16px] leading-[1.55] max-w-[560px]">
+                  Fotos, descrições, preços e organização dos produtos influenciam diretamente a decisão de compra.
+                </p>
+              </div>
+              <div class="hidden sm:flex items-center text-white/20 group-hover:text-[#FFD21F] group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 pt-3">
+                <i data-lucide="chevron-right" class="w-5 h-5 stroke-[2]"></i>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Rodapé da Seção (Frase Institucional + CTA Pill Amarelo) -->
+          <div class="pt-10 sm:pt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            
+            <!-- Frase à esquerda com barra vertical amarela -->
+            <div class="flex items-center">
+              <span class="w-[3px] h-8 sm:h-9 bg-[#FFD21F] rounded-full mr-4 flex-shrink-0 inline-block"></span>
+              <p class="text-[11px] sm:text-[12px] font-bold uppercase tracking-[0.14em] text-[#AEB8C8] leading-relaxed max-w-[440px]">
+                O PRIMEIRO PASSO É ENTENDER ONDE SUA OPERAÇÃO ESTÁ PERDENDO OPORTUNIDADES.
+              </p>
+            </div>
+
+            <!-- CTA Pill Amarelo à direita -->
+            <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20analisar%20meu%20delivery%20e%20fazer%20um%20diagn%C3%B3stico." target="_blank"
+               class="inline-flex items-center justify-center gap-2.5 px-8 py-4 sm:px-9 sm:py-4.5 rounded-full bg-[#FFD21F] hover:bg-[#FFE043] text-[#0A0A0A] font-bold text-sm sm:text-[15px] transition-all duration-200 shadow-sm hover:shadow-md hover:shadow-[#FFD21F]/20 active:scale-[0.98] whitespace-nowrap">
+              <span>Quero analisar meu delivery</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2.5]"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- SEÇÃO 3: A JORNADA DE UM DONO DE RESTAURANTE   -->
+  <!-- ============================================== -->
+  <section id="jornada" class="journey-section">
+    
+    <!-- Detalhe decorativo dourado diagonal (fiel ao mockup) -->
+    <div class="absolute -top-12 -left-12 w-28 h-28 pointer-events-none select-none z-0 hidden lg:block opacity-60">
+      <svg viewBox="0 0 100 100" fill="none" class="w-full h-full">
+        <polygon points="0,0 80,0 0,80" fill="none" stroke="#F4C542" stroke-width="1.5" />
+      </svg>
+    </div>
+
+    <div class="absolute -bottom-12 -right-12 w-36 h-36 pointer-events-none select-none z-0 hidden lg:block opacity-60">
+      <svg viewBox="0 0 120 120" fill="none" class="w-full h-full">
+        <polygon points="120,40 120,120 40,120" fill="none" stroke="#F4C542" stroke-width="1.5" />
+      </svg>
+    </div>
+
+    <div class="journey-container">
+      
+      <!-- Coluna da Esquerda: Fotografia Principal (aproximadamente 40%) -->
+      <div class="journey-visual">
+        <img
+          class="journey-photo"
+          src="assets/images/restaurant-owner-journey.jpg"
+          alt="Dono de restaurante refletindo sobre a operação do negócio"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Coluna da Direita: Conteúdo Editorial e Linha do Tempo (aproximadamente 60%) -->
+      <div class="journey-content">
+        
+        <!-- Bloco Introdutório -->
+        <div class="journey-intro">
+          <span class="journey-eyebrow">
+            A REALIDADE DE MUITOS RESTAURANTES
+          </span>
+
+          <h2 class="journey-title">
+            A Jornada de um<br>
+            <span>Dono de Restaurante</span>
+          </h2>
+
+          <p class="journey-description">
+            Você não está sozinho. Essa é a realidade de muitos restaurantes — e o ponto de partida para mudar esse cenário.
+          </p>
+        </div>
+
+        <!-- Linha do Tempo das 3 Etapas -->
+        <ol class="journey-timeline">
+          <!-- Linha vertical contínua dourada conectando os números -->
+          <div class="journey-timeline-line"></div>
+
+          <!-- Etapa 01 -->
+          <li class="journey-step">
+            <span class="journey-badge">01</span>
+            <div class="journey-icon-wrap">
+              <svg class="w-5 h-5 text-[#F4C542]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/>
+                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/>
+                <path d="M2 7h20"/>
+                <path d="M22 7c0 2.21-2.24 4-5 4s-5-1.79-5-4"/>
+                <path d="M12 7c0 2.21-2.24 4-5 4S2 9.21 2 7"/>
+              </svg>
+            </div>
+            <div class="journey-step-content">
+              <h3>Abertura do negócio</h3>
+              <p>Muito trabalho, investimento e expectativa de crescer.</p>
+            </div>
+          </li>
+
+          <!-- Etapa 02 -->
+          <li class="journey-step">
+            <span class="journey-badge">02</span>
+            <div class="journey-icon-wrap">
+              <svg class="w-5 h-5 text-[#F4C542]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="14" height="20" x="5" y="2" rx="3"/>
+                <path d="M9 9a3 3 0 0 1 6 0H9Z"/>
+                <line x1="8.5" y1="11.5" x2="15.5" y2="11.5"/>
+                <path d="M9 13.5h6a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5Z"/>
+              </svg>
+            </div>
+            <div class="journey-step-content">
+              <h3>Entrada nos aplicativos</h3>
+              <p>Os primeiros pedidos e a expectativa de conquistar clientes.</p>
+            </div>
+          </li>
+
+          <!-- Etapa 03 -->
+          <li class="journey-step">
+            <span class="journey-badge">03</span>
+            <div class="journey-icon-wrap">
+              <svg class="w-5 h-5 text-[#F4C542]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/>
+                <polyline points="16 17 22 17 22 11"/>
+                <path d="M2 3v18h18"/>
+              </svg>
+            </div>
+            <div class="journey-step-content">
+              <h3>O desafio de crescer</h3>
+              <p>Concorrência, cancelamentos e vendas que não evoluem como esperado.</p>
+            </div>
+          </li>
+        </ol>
+
+        <!-- Fechamento da Seção (Sem botão, conecta à próxima seção) -->
+        <div class="journey-closing">
+          <div class="journey-closing-left">
+            <div class="journey-closing-icon">
+              <svg class="w-5 h-5 text-[#F4C542]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+                <line x1="22" y1="2" x2="18" y2="6"/>
+              </svg>
+            </div>
+            <div>
+              <span class="journey-closing-label">
+                É aqui que entra a Turbine.
+              </span>
+              <p>
+                Gestão estratégica para cuidar dos detalhes do seu delivery enquanto você cuida do restaurante.
+              </p>
+            </div>
+          </div>
+          <div class="journey-closing-arrow">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================== -->
+  <!-- SLIDE 6: POR QUE ESCOLHER A TURBINE? (CARD STACK) -->
+  <!-- ============================================== -->
+  <section id="sobre" class="why-section">
+    <div class="why-container">
+      <div class="why-grid">
+        
+        <!-- COLUNA ESQUERDA: APENAS O TÍTULO (COM ANIMAÇÃO TYPEWRITER) -->
+        <div class="why-header-col">
+          <h2 class="why-title" id="typewriterTitle" aria-label="Por Que Escolher a Turbine?">
+            <span id="twPart1">Por Que Escolher</span><span id="twBreak"><br></span><span id="twPart2" class="text-[#F4C542]">a Turbine?</span><span id="twCursor" class="tw-cursor">|</span>
+          </h2>
+        </div>
+
+        <!-- COLUNA DIREITA: CARD STACK INTERATIVO (Inspirado em media_1790984311752.png) -->
+        <div class="why-right-col flex flex-col items-center w-full">
+          <div class="cardstack-wrapper">
+            
+            <!-- Palco do Stack de Cards -->
+            <div class="cardstack-stage" id="cardStackStage">
+              
+              <!-- CARD 01: Estratégias Personalizadas -->
+              <div class="cardstack-card" data-pos="0" data-card-idx="0">
+                <div class="card-body">
+                  <h3 class="card-body-title">Soluções 100% Personalizadas</h3>
+                  <p class="card-body-desc">
+                    Cada restaurante tem seu público, ticket médio e raio de atendimento. Criamos um plano sob medida para sua cozinha vencer a concorrência local sem fórmulas prontas.
+                  </p>
+                  
+                  <ul class="card-feature-list">
+                    <li class="card-feature-item">
+                      <span class="card-feature-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                      <span>Diagnóstico minucioso dos concorrentes do seu raio</span>
+                    </li>
+                    <li class="card-feature-item">
+                      <span class="card-feature-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                      <span>Engenharia de cardápio & combos de alto valor</span>
+                    </li>
+                    <li class="card-feature-item">
+                      <span class="card-feature-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                      <span>Alinhamento de preço ideal para conversão máxima</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="card-bottom-bar">
+                  <span>1 de 4</span>
+                </div>
+              </div>
+
+              <!-- CARD 02: Time Especialista -->
+              <div class="cardstack-card" data-pos="1" data-card-idx="1">
+                <div class="card-body">
+                  <h3 class="card-body-title">Especialistas com Vivência Real</h3>
+                  <p class="card-body-desc">
+                    Nossa equipe respira aplicativos de delivery diariamente. Entendemos a fundo os algoritmos do iFood, KeeTa e 99Food e os segredos de indexação que a maioria desconhece.
+                  </p>
+                  
+                  <ul class="card-feature-list">
+                    <li class="card-feature-item">
+                      <span class="card-feature-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                      <span>Consultores dedicados ao seu nicho gastronômico</span>
+                    </li>
+                    <li class="card-feature-item">
+                      <span class="card-feature-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                      <span>Testes contínuos de palavras-chave e categorias</span>
+                    </li>
+                    <li class="card-feature-item">
+                      <span class="card-feature-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                      <span>Know-how aplicado em centenas de operações</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="card-bottom-bar">
+                  <span>2 de 4</span>
+                </div>
+              </div>
+
+              <!-- CARD 03: Foco em Faturamento e Lucro -->
+              <div class="cardstack-card" data-pos="2" data-card-idx="2">
+                <div class="card-body">
+                  <h3 class="card-body-title">Foco em Faturamento e Lucro Real</h3>
+                  <p class="card-body-desc">
+                    Vender mais sem margem só traz estresse para a sua equipe. Nossos métodos garantem que o aumento de pedidos se converta em dinheiro real e previsível no caixa.
+                  </p>
+                  
+                  <ul class="card-feature-list">
+                    <li class="card-feature-item">
+                      <span class="card-feature-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                      <span>Monitoramento rigoroso de CMV e comissões dos apps</span>
+                    </li>
+                    <li class="card-feature-item">
+                      <span class="card-feature-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                      <span>Campanhas e cupons inteligentes que protegem seu lucro</span>
+                    </li>
+                    <li class="card-feature-item">
+                      <span class="card-feature-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                      <span>Acompanhamento métrica a métrica sem números fictícios</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="card-bottom-bar">
+                  <span>3 de 4</span>
+                </div>
+              </div>
+
+              <!-- CARD 04: Suporte Ativo e Contínuo -->
+              <div class="cardstack-card" data-pos="3" data-card-idx="3">
+                <div class="card-body">
+                  <h3 class="card-body-title">Suporte Contínuo & Operação Sem Esforço</h3>
+                  <p class="card-body-desc">
+                    Você não perde mais horas criando promoções ou cadastrando itens. Cuidamos dos bastidores do delivery para você se dedicar à excelência dos pratos e ao salão.
+                  </p>
+                  
+                  <ul class="card-feature-list">
+                    <li class="card-feature-item">
+                      <span class="card-feature-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                      <span>Canal direto no WhatsApp com o seu gestor de conta</span>
+                    </li>
+                    <li class="card-feature-item">
+                      <span class="card-feature-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                      <span>Alterações rápidas de cardápio, fotos e descrições</span>
+                    </li>
+                    <li class="card-feature-item">
+                      <span class="card-feature-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                      <span>Reuniões periódicas com relatórios de evolução</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="card-bottom-bar">
+                  <span>4 de 4</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- CONTROLES INFERIORES (Estilo idêntico à imagem de referência media_1790984311752.png) -->
+            <div class="cardstack-controls-wrap">
+              <div class="cardstack-controls">
+                
+                <!-- Botão Esquerdo: Anterior / Pular -->
+                <button type="button" id="cardStackPrev" class="cardstack-btn cardstack-btn-secondary" aria-label="Card anterior">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                  <span>Anterior</span>
+                </button>
+
+                <!-- Botão Central: Reiniciar / Undo -->
+                <button type="button" id="cardStackReset" class="cardstack-btn cardstack-btn-icon" aria-label="Reiniciar do primeiro" title="Voltar ao início">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                    <path d="M3 3v5h5"/>
+                  </svg>
+                </button>
+
+                <!-- Botão Direito: Próximo / Shortlist (Dourado de Destaque) -->
+                <button type="button" id="cardStackNext" class="cardstack-btn cardstack-btn-primary" aria-label="Próximo card">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  <span>Próximo</span>
+                </button>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- SEÇÃO: 5 PASSOS DO SUCESSO TURBINE             -->
+  <!-- 1. Começar de cima para baixo (Lead-in)        -->
+  <!-- 2. Arrastando pros lados (Pinned Timeline)     -->
+  <!-- 3. Finalizar para baixo (Lead-out)             -->
+  <!-- ============================================== -->
+  <section id="metodo" class="steps-timeline-section relative bg-[#0B0B0A] text-white overflow-hidden border-t border-b border-white/10">
+
+    <!-- Mobile Header (somente em < lg) -->
+    <div class="block lg:hidden px-6 pt-12 pb-2">
+      <h2 class="text-3xl font-extrabold text-white leading-tight">
+        5 Passos do Sucesso <span class="text-[#F4C542]">Turbine</span>
+      </h2>
+      <p class="text-xs text-[#A4A49E] mt-1 font-mono uppercase tracking-wider flex items-center gap-1.5">
+        <span>Arraste para o lado</span> &rarr;
+      </p>
+    </div>
+
+    <!-- 2. PINNED HORIZONTAL TIMELINE -->
+    <div class="steps-pinned-viewport h-screen w-full sticky top-0 overflow-hidden flex flex-col justify-between py-2 lg:py-3">
+      
+      <!-- Header Superior: 5 Passos do Sucesso Turbine -->
+      <div class="steps-top-header hidden lg:flex flex-col items-center justify-center w-full text-center z-20 flex-shrink-0 px-6 pt-2 pb-1">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-none">
+          5 Passos do Sucesso <span class="text-[#F4C542]">Turbine</span>
+        </h2>
+      </div>
+
+      <div class="steps-grand-slider flex flex-1 w-max items-center px-8 lg:px-[5vw]" id="stepsSliderTrack">
+        
+        <!-- Palco Aberto Editorial da Linha do Tempo -->
+        <div class="steps-grand-stage relative h-full flex-shrink-0 flex flex-col justify-between">
+          
+          <!-- Linha Central Horizontal -->
+          <div class="steps-grand-axis absolute left-0 right-0 top-[50%] -translate-y-1/2 flex items-center w-full z-10 pointer-events-none">
+            <div class="w-[12px] h-[12px] rounded-full bg-[#F4C542] shadow-[0_0_14px_#F4C542] flex-shrink-0"></div>
+            <div class="h-[2px] w-full bg-[#F4C542]/20 relative">
+              <div class="steps-axis-fill h-full bg-[#F4C542] shadow-[0_0_14px_#F4C542] w-0" id="stepsAxisLineFill"></div>
+            </div>
+            <div class="w-[12px] h-[12px] rounded-full bg-[#F4C542] shadow-[0_0_14px_#F4C542] flex-shrink-0"></div>
+          </div>
+
+          <!-- Trilho Superior (h-1/2): Passos 1, 3, 5 -->
+          <div class="steps-rail steps-rail-top flex h-1/2 w-full items-end justify-start pb-1">
+            <!-- Passos Superiores: 1, 3, 5 -->
+            <div class="flex h-full gap-x-[54vw] items-end ml-[6vw]">
+              
+              <!-- Passo 1 -->
+              <div class="step-milestone step-milestone-top relative h-full w-[38vw] min-w-[450px] max-w-[580px] flex-shrink-0 flex flex-col justify-end pb-2" data-step="1">
+                <div class="absolute left-0 bottom-0 top-0 w-px flex flex-col items-center justify-end">
+                  <div class="w-[14px] h-[14px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_18px_#F4C542] mb-[-7px] z-20 step-dot"></div>
+                  <div class="w-[2px] h-[75%] bg-gradient-to-t from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
+                </div>
+                <div class="step-content pl-8 space-y-1.5 mb-1.5">
+                  <h3 class="text-xl md:text-2xl lg:text-[27px] font-black leading-tight text-white tracking-tight">
+                    Passo 1 — Análise Inicial da Loja
+                  </h3>
+                  <p class="text-xs md:text-sm lg:text-[15px] leading-snug text-[#F4C542] font-bold">
+                    Diagnóstico completo da sua operação.
+                  </p>
+                  <div class="space-y-1 lg:space-y-1.5 pt-0.5 text-xs lg:text-[13.5px] text-[#D6D6D0] leading-snug">
+                    <p><strong class="text-white font-bold">Cardápio:</strong> Avaliação completa de produtos, preços e apresentação.</p>
+                    <p><strong class="text-white font-bold">Avaliações:</strong> Análise detalhada dos comentários e pontuações.</p>
+                    <p><strong class="text-white font-bold">Métricas:</strong> Estudo de vendas, cancelamentos e tempo de entrega.</p>
+                    <p><strong class="text-white font-bold">Concorrência:</strong> Comparativo com restaurantes similares na região.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Passo 3 -->
+              <div class="step-milestone step-milestone-top relative h-full w-[38vw] min-w-[450px] max-w-[580px] flex-shrink-0 flex flex-col justify-end pb-2" data-step="3">
+                <div class="absolute left-0 bottom-0 top-0 w-px flex flex-col items-center justify-end">
+                  <div class="w-[14px] h-[14px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_18px_#F4C542] mb-[-7px] z-20 step-dot"></div>
+                  <div class="w-[2px] h-[75%] bg-gradient-to-t from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
+                </div>
+                <div class="step-content pl-8 space-y-1.5 mb-1.5">
+                  <h3 class="text-xl md:text-2xl lg:text-[27px] font-black leading-tight text-white tracking-tight">
+                    Passo 3 — Monitoramento Semanal
+                  </h3>
+                  <p class="text-xs md:text-sm lg:text-[15px] leading-snug text-[#F4C542] font-bold">
+                    Acompanhamento contínuo de resultados.
+                  </p>
+                  <div class="space-y-1 lg:space-y-1.5 pt-0.5 text-xs lg:text-[13.5px] text-[#D6D6D0] leading-snug">
+                    <p><strong class="text-white font-bold">Controle Operacional:</strong> Monitoramento de pedidos, tempo de expedição e notas nos apps (iFood • KeeTa • 99Food).</p>
+                    <p><strong class="text-white font-bold">Vendas & Avaliações:</strong> Acompanhamento semana a semana com metas claras de crescimento.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Passo 5 -->
+              <div class="step-milestone step-milestone-top relative h-full w-[38vw] min-w-[450px] max-w-[580px] flex-shrink-0 flex flex-col justify-end pb-2" data-step="5">
+                <div class="absolute left-0 bottom-0 top-0 w-px flex flex-col items-center justify-end">
+                  <div class="w-[14px] h-[14px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_18px_#F4C542] mb-[-7px] z-20 step-dot"></div>
+                  <div class="w-[2px] h-[75%] bg-gradient-to-t from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
+                </div>
+                <div class="step-content pl-8 space-y-1.5 mb-1.5">
+                  <h3 class="text-xl md:text-2xl lg:text-[27px] font-black leading-tight text-white tracking-tight">
+                    Passo 5 — Relatórios & Suporte
+                  </h3>
+                  <p class="text-xs md:text-sm lg:text-[15px] leading-snug text-[#F4C542] font-bold">
+                    Relatórios detalhados e orientação constante.
+                  </p>
+                  <div class="space-y-1 lg:space-y-1.5 pt-0.5 text-xs lg:text-[13.5px] text-[#D6D6D0] leading-snug">
+                    <p><strong class="text-white font-bold">Relatórios Semanais:</strong> Documentos detalhados com análises e recomendações específicas.</p>
+                    <p><strong class="text-white font-bold">Reuniões Periódicas:</strong> Encontros virtuais para discutir estratégias e resultados.</p>
+                    <p><strong class="text-white font-bold">Suporte Contínuo:</strong> Equipe disponível para resolver dúvidas e implementar ajustes.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Trilho Inferior (h-1/2): Passos 2, 4 + Conclusão -->
+          <div class="steps-rail steps-rail-bottom flex h-1/2 w-full items-start justify-start pt-1">
+            <!-- Espaço inicial para intercalar exatamente o Passo 2 entre o Passo 1 e o Passo 3 -->
+            <div class="w-[52vw] min-w-[500px] flex-shrink-0"></div>
+
+            <!-- Passos Inferiores: 2, 4, Conclusão -->
+            <div class="flex h-full gap-x-[54vw] items-start">
+              
+              <!-- Passo 2 -->
+              <div class="step-milestone step-milestone-bottom relative h-full w-[38vw] min-w-[450px] max-w-[580px] flex-shrink-0 flex flex-col justify-start pt-2" data-step="2">
+                <div class="absolute left-0 top-0 bottom-0 w-px flex flex-col items-center justify-start">
+                  <div class="w-[14px] h-[14px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_18px_#F4C542] mt-[-7px] z-20 step-dot"></div>
+                  <div class="w-[2px] h-[75%] bg-gradient-to-b from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
+                </div>
+                <div class="step-content pl-8 space-y-1.5 mt-1.5">
+                  <h3 class="text-xl md:text-2xl lg:text-[27px] font-black leading-tight text-white tracking-tight">
+                    Passo 2 — Estratégias de Sucesso
+                  </h3>
+                  <p class="text-xs md:text-sm lg:text-[15px] leading-snug text-[#F4C542] font-bold">
+                    Implementação de táticas comprovadas.
+                  </p>
+                  <div class="space-y-1 lg:space-y-1.5 pt-0.5 text-xs lg:text-[13.5px] text-[#D6D6D0] leading-snug">
+                    <p><strong class="text-white font-bold">Fotos Profissionais:</strong> Imagens que destacam seu produto e aumentam conversão.</p>
+                    <p><strong class="text-white font-bold">Precificação Estratégica:</strong> Valores otimizados para maximizar vendas e lucro.</p>
+                    <p><strong class="text-white font-bold">Combos Vencedores:</strong> Criação de ofertas irresistíveis que aumentam o ticket médio.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Passo 4 -->
+              <div class="step-milestone step-milestone-bottom relative h-full w-[38vw] min-w-[450px] max-w-[580px] flex-shrink-0 flex flex-col justify-start pt-2" data-step="4">
+                <div class="absolute left-0 top-0 bottom-0 w-px flex flex-col items-center justify-start">
+                  <div class="w-[14px] h-[14px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_18px_#F4C542] mt-[-7px] z-20 step-dot"></div>
+                  <div class="w-[2px] h-[75%] bg-gradient-to-b from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
+                </div>
+                <div class="step-content pl-8 space-y-1.5 mt-1.5">
+                  <h3 class="text-xl md:text-2xl lg:text-[27px] font-black leading-tight text-white tracking-tight">
+                    Passo 4 — Gestão de Promoções
+                  </h3>
+                  <p class="text-xs md:text-sm lg:text-[15px] leading-snug text-[#F4C542] font-bold">
+                    Otimização de cupons e ofertas.
+                  </p>
+                  <div class="space-y-1 lg:space-y-1.5 pt-0.5 text-xs lg:text-[13.5px] text-[#D6D6D0] leading-snug">
+                    <p><strong class="text-white font-bold">Planejamento:</strong> Calendário estratégico de promoções alinhado com datas-chave.</p>
+                    <p><strong class="text-white font-bold">Segmentação:</strong> Ofertas direcionadas para públicos específicos.</p>
+                    <p><strong class="text-white font-bold">Análise & Otimização:</strong> Avaliação do retorno de cada promoção e ajustes contínuos.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Conclusão da Timeline -->
+              <div class="step-milestone step-milestone-bottom relative h-full w-[38vw] min-w-[450px] max-w-[580px] flex-shrink-0 flex flex-col justify-start pt-2" data-step="6">
+                <div class="absolute left-0 top-0 bottom-0 w-px flex flex-col items-center justify-start">
+                  <div class="w-[14px] h-[14px] -translate-x-1/2 rounded-full bg-[#F4C542] shadow-[0_0_18px_#F4C542] mt-[-7px] z-20 step-dot"></div>
+                  <div class="w-[2px] h-[75%] bg-gradient-to-b from-[#F4C542] via-[#F4C542]/80 to-[#F4C542]/30 step-stem"></div>
+                </div>
+                <div class="step-content pl-8 space-y-2 mt-1.5">
+                  <h3 class="text-xl md:text-2xl lg:text-[27px] font-black leading-tight text-white tracking-tight">
+                    Operação Pronta para Escalar
+                  </h3>
+                  <p class="text-xs md:text-sm lg:text-[15px] leading-snug text-[#D6D6D0] font-medium">
+                    Processos alinhados, visibilidade no topo e margem saudável em todos os pedidos.
+                  </p>
+                  <div class="pt-2">
+                    <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-[#F4C542] text-[#0B0B0A] font-black text-xs md:text-sm uppercase tracking-wider hover:bg-[#FFE045] shadow-[0_0_24px_rgba(244,197,66,0.4)] transition-all">
+                      <span>Falar com Especialista</span>
+                      <span>&rarr;</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================== -->
+  <!-- SLIDE 13: COMO FUNCIONA - FLUXO DO SERVIÇO     -->
+  <!-- ============================================== -->
+  <section id="fluxo" class="py-20 md:py-28 bg-white border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="max-w-2xl mb-14">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-text tracking-tight">
+          Como Funciona - Fluxo do Serviço
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="p-8 rounded-xl bg-brand-bg border border-brand-border space-y-3">
+          <span class="text-xs font-mono font-bold text-brand-red uppercase">Etapa 01</span>
+          <h3 class="text-xl font-bold text-brand-text">Contratação</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">
+            Assinatura do contrato e coleta inicial de informações.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-xl bg-brand-bg border border-brand-border space-y-3">
+          <span class="text-xs font-mono font-bold text-brand-red uppercase">Etapa 02</span>
+          <h3 class="text-xl font-bold text-brand-text">Ativação</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">
+            Implementação das primeiras estratégias em até 7 dias.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-xl bg-brand-bg border border-brand-border space-y-3">
+          <span class="text-xs font-mono font-bold text-brand-red uppercase">Etapa 03</span>
+          <h3 class="text-xl font-bold text-brand-text">Acompanhamento</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">
+            Monitoramento contínuo e ajustes semanais.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-xl bg-brand-bg border border-brand-border space-y-3">
+          <span class="text-xs font-mono font-bold text-brand-red uppercase">Etapa 04</span>
+          <h3 class="text-xl font-bold text-brand-text">Compromisso</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">
+            Período mínimo de 6 meses para resultados consistentes.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- SLIDE 14: RESPONSABILIDADE COMPARTILHADA       -->
+  <!-- ============================================== -->
+  <section class="py-20 md:py-28 bg-brand-bg border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="max-w-2xl mb-14">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-text tracking-tight">
+          Responsabilidade Compartilhada
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Papel da Turbine -->
+        <div class="p-8 sm:p-10 rounded-2xl bg-white border border-brand-border shadow-sm space-y-6">
+          <h3 class="text-2xl font-extrabold text-brand-red pb-4 border-b border-brand-border">Papel da Turbine</h3>
+          <ul class="space-y-4 text-base text-brand-text">
+            <li class="flex items-center gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-brand-red flex-shrink-0"></i>
+              <span>Análise estratégica</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-brand-red flex-shrink-0"></i>
+              <span>Implementação de ações</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-brand-red flex-shrink-0"></i>
+              <span>Monitoramento contínuo</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-brand-red flex-shrink-0"></i>
+              <span>Suporte especializado</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Papel do Restaurante -->
+        <div class="p-8 sm:p-10 rounded-2xl bg-white border border-brand-border shadow-sm space-y-6">
+          <h3 class="text-2xl font-extrabold text-brand-text pb-4 border-b border-brand-border">Papel do Restaurante</h3>
+          <ul class="space-y-4 text-base text-brand-muted">
+            <li class="flex items-center gap-3">
+              <i data-lucide="arrow-right" class="w-5 h-5 text-brand-muted flex-shrink-0"></i>
+              <span>Envio de dados</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i data-lucide="arrow-right" class="w-5 h-5 text-brand-muted flex-shrink-0"></i>
+              <span>Fornecimento de materiais</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i data-lucide="arrow-right" class="w-5 h-5 text-brand-muted flex-shrink-0"></i>
+              <span>Cumprimento de prazos</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i data-lucide="arrow-right" class="w-5 h-5 text-brand-muted flex-shrink-0"></i>
+              <span>Comunicação ativa</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- SLIDE 16: CASOS DE SUCESSO                     -->
+  <!-- ============================================== -->
+  <section id="casos" class="py-20 md:py-28 bg-white border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="max-w-2xl mb-10">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-text tracking-tight">
+          Casos de Sucesso
+        </h2>
+      </div>
+
+      <div class="p-8 sm:p-12 rounded-2xl bg-brand-bg border border-brand-border space-y-8">
+        <p class="text-xl sm:text-2xl text-brand-text font-normal leading-relaxed">
+          Restaurantes que implementaram nossa metodologia obtiveram aumento médio de 35% nas vendas e melhoria de 1.5 estrelas nas avaliações.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-brand-border">
+          <div class="space-y-1">
+            <span class="text-4xl sm:text-5xl font-extrabold font-mono text-brand-red block">+35%</span>
+            <span class="text-sm font-semibold text-brand-muted">Aumento médio nas vendas</span>
+          </div>
+          <div class="space-y-1">
+            <span class="text-4xl sm:text-5xl font-extrabold font-mono text-brand-text block">+1.5★</span>
+            <span class="text-sm font-semibold text-brand-muted">Melhoria nas avaliações</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- SLIDE 17: INVESTIMENTO E RETORNO               -->
+  <!-- ============================================== -->
+  <section class="py-20 md:py-28 bg-brand-bg border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="max-w-2xl mb-14">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-text tracking-tight">
+          Investimento e Retorno
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-8 rounded-xl bg-white border border-brand-border shadow-sm space-y-3">
+          <h3 class="text-xl font-bold text-brand-text">Resultados Extraordinários</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">
+            Aumento expressivo em vendas e avaliações.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-xl bg-white border border-brand-border shadow-sm space-y-3">
+          <h3 class="text-xl font-bold text-brand-text">Crescimento Consistente</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">
+            Evolução sustentável do negócio.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-xl bg-white border border-brand-border shadow-sm space-y-3">
+          <h3 class="text-xl font-bold text-brand-text">Investimento Acessível</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">
+            Valor que se paga com o aumento das vendas.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- SLIDE 18: EQUIPE ESPECIALIZADA                 -->
+  <!-- ============================================== -->
+  <section id="equipe" class="py-20 md:py-28 bg-white border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="max-w-2xl mb-14">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-text tracking-tight">
+          Equipe Especializada
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="p-8 rounded-xl bg-brand-bg border border-brand-border space-y-3">
+          <h3 class="text-lg font-bold text-brand-text">Consultores Estratégicos</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            Profissionais com mais de 5 anos de experiência no mercado de delivery.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-xl bg-brand-bg border border-brand-border space-y-3">
+          <h3 class="text-lg font-bold text-brand-text">Analistas de Dados</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            Especialistas em métricas e otimização de resultados no iFood.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-xl bg-brand-bg border border-brand-border space-y-3">
+          <h3 class="text-lg font-bold text-brand-text">Designers Culinários</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            Profissionais focados na apresentação visual dos seus produtos.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-xl bg-brand-bg border border-brand-border space-y-3">
+          <h3 class="text-lg font-bold text-brand-text">Suporte Dedicado</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            Equipe exclusiva para atendimento personalizado ao seu negócio.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- SLIDE 15: AGENDE SUA REUNIÃO GRATUITA          -->
+  <!-- ============================================== -->
+  <section class="py-20 md:py-28 bg-brand-dark text-white border-b border-brand-borderDark">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="max-w-2xl mb-14">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          Agende Sua Reunião Gratuita
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        
+        <!-- 0 Custo -->
+        <div class="p-8 rounded-xl bg-brand-darkCard border border-brand-borderDark space-y-2">
+          <span class="text-4xl font-extrabold font-mono text-white block">0</span>
+          <h3 class="text-lg font-bold text-white">Custo</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Diagnóstico inicial totalmente gratuito e sem compromisso.
+          </p>
+        </div>
+
+        <!-- 30min Duração -->
+        <div class="p-8 rounded-xl bg-brand-darkCard border border-brand-borderDark space-y-2">
+          <span class="text-4xl font-extrabold font-mono text-white block">30min</span>
+          <h3 class="text-lg font-bold text-white">Duração</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Reunião objetiva para identificar oportunidades de crescimento.
+          </p>
+        </div>
+
+        <!-- 7dias Prazo -->
+        <div class="p-8 rounded-xl bg-brand-darkCard border border-brand-borderDark space-y-2">
+          <span class="text-4xl font-extrabold font-mono text-white block">7dias</span>
+          <h3 class="text-lg font-bold text-white">Prazo</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Receba um plano personalizado em até uma semana.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Action Button -->
+      <div>
+        <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20agendar%20minha%20reuni%C3%A3o%20gratuita%20de%2030%20minutos." target="_blank"
+           class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-lg bg-brand-red hover:bg-brand-redHover text-white text-sm font-bold uppercase tracking-wider transition-all shadow-md">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Agendar no WhatsApp (11) 99597-1212</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- SLIDE 19: PERGUNTAS FREQUENTES                 -->
+  <!-- ============================================== -->
+  <section id="faq" class="py-20 md:py-28 bg-white border-b border-brand-border">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <div class="max-w-2xl mb-14">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-text tracking-tight">
+          Perguntas Frequentes
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- Q1 -->
+        <div class="faq-item rounded-xl bg-brand-bg border border-brand-border overflow-hidden transition-all">
+          <button class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between font-bold text-brand-text hover:text-brand-red transition-colors">
+            <span class="text-base">Quanto tempo até ver resultados?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-muted transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-sm text-brand-muted leading-relaxed border-t border-brand-border/60 pt-4">
+            Os primeiros resultados são visíveis em 4-6 semanas após implementação.
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item rounded-xl bg-brand-bg border border-brand-border overflow-hidden transition-all">
+          <button class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between font-bold text-brand-text hover:text-brand-red transition-colors">
+            <span class="text-base">Preciso mudar meu cardápio?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-muted transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-sm text-brand-muted leading-relaxed border-t border-brand-border/60 pt-4">
+            Sim, fotos, descrições, combos etc...
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item rounded-xl bg-brand-bg border border-brand-border overflow-hidden transition-all">
+          <button class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between font-bold text-brand-text hover:text-brand-red transition-colors">
+            <span class="text-base">Como é feito o pagamento?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-muted transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-sm text-brand-muted leading-relaxed border-t border-brand-border/60 pt-4">
+            Mensalidade fixa ou pagamento semanal todas as quartas feiras.
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item rounded-xl bg-brand-bg border border-brand-border overflow-hidden transition-all">
+          <button class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between font-bold text-brand-text hover:text-brand-red transition-colors">
+            <span class="text-base">Posso cancelar o serviço?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-muted transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-sm text-brand-muted leading-relaxed border-t border-brand-border/60 pt-4">
+            Sim, após o período mínimo de 6 meses, com aviso prévio de 30 dias.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- SLIDE 20: DÚVIDAS & INICIE SUA TRANSFORMAÇÃO   -->
+  <!-- ============================================== -->
+  <section class="py-20 md:py-28 bg-brand-bg border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        
+        <!-- Espaço para Dúvidas & Feedback -->
+        <div class="space-y-6">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-text tracking-tight">
+            Espaço para Dúvidas & Feedback
+          </h2>
+
+          <div class="p-8 rounded-xl bg-white border border-brand-border shadow-sm space-y-3">
+            <h3 class="text-lg font-bold text-brand-text">Anote Suas Dúvidas</h3>
+            <p class="text-sm text-brand-muted leading-relaxed">
+              Estamos prontos para esclarecer qualquer questão sobre nossos serviços.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-xl bg-white border border-brand-border shadow-sm space-y-3">
+            <h3 class="text-lg font-bold text-brand-text">Compartilhe Suas Necessidades</h3>
+            <p class="text-sm text-brand-muted leading-relaxed">
+              Conte-nos os desafios específicos do seu negócio para soluções personalizadas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Inicie Sua Transformação -->
+        <div class="p-8 sm:p-10 rounded-2xl bg-white border border-brand-border shadow-md space-y-6">
+          <h3 class="text-3xl font-extrabold text-brand-text tracking-tight">
+            Inicie Sua Transformação
+          </h3>
+
+          <p class="text-base text-brand-muted leading-relaxed">
+            O primeiro passo para revolucionar seu delivery começa agora.
+          </p>
+
+          <div class="space-y-3 pt-2 font-mono text-sm">
+            <div class="p-4 rounded-lg bg-brand-bg border border-brand-border flex items-center gap-3">
+              <span class="text-brand-red font-bold">Wpp:</span>
+              <a href="https://wa.me/5511995971212" target="_blank" class="text-brand-text font-bold hover:underline">
+                (11) 99597-1212
+              </a>
+            </div>
+            <div class="p-4 rounded-lg bg-brand-bg border border-brand-border flex items-center gap-3">
+              <span class="text-brand-red font-bold">E-mail:</span>
+              <a href="mailto:murillo.delivery88@gmail.com" class="text-brand-text font-bold hover:underline">
+                murillo.delivery88@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20iniciar%20a%20transforma%C3%A7%C3%A3o%20do%20meu%20delivery." target="_blank"
+             class="w-full inline-flex items-center justify-center gap-3 px-8 py-4 rounded-lg bg-brand-red hover:bg-brand-redHover text-white text-sm font-bold uppercase tracking-wider transition-all shadow-md">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Iniciar Transformação no WhatsApp</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-white text-brand-muted text-xs border-t border-brand-border">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span class="text-brand-text font-bold text-sm block">Turbine Gestão de Delivery</span>
+        <span class="text-brand-muted text-[11px]">Especialista em iFood, KeeTa e 99Food</span>
+      </div>
+      <div class="text-center sm:text-right font-mono text-[11px]">
+        <span>Wpp: (11) 99597-1212</span> • <span>murillo.delivery88@gmail.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Sticky WhatsApp Button (Solid Red, No Gradient) -->
+  <div id="stickyWhatsapp" class="fixed bottom-6 right-6 z-50 transition-all duration-300 transform translate-y-24 opacity-0">
+    <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank"
+       class="flex items-center gap-3 px-5 py-3.5 rounded-full bg-brand-red hover:bg-brand-redHover text-white font-bold text-xs uppercase tracking-wider shadow-lg transition-all border border-white/20">
+      <i data-lucide="message-circle" class="w-4 h-4"></i>
+      <span>Falar no WhatsApp</span>
+    </a>
+  </div>
+
+  <!-- GSAP & ScrollTrigger (Local, Zero-Dependency) -->
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
