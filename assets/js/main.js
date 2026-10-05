@@ -81,14 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4. Sticky Floating WhatsApp Button with smart hiding on CTA sections
   const stickyWhatsapp = document.getElementById('stickyWhatsapp');
   const agendeSection = document.getElementById('agende');
-  const footerSection = document.querySelector('section:last-of-type');
+  const contatoSection = document.getElementById('contato') || document.querySelector('section:last-of-type');
 
   if (stickyWhatsapp) {
     const updateWhatsappVisibility = () => {
       const scrollY = window.scrollY;
-      let shouldHide = scrollY < 400;
+      let shouldHide = scrollY < 250;
 
-      // Check if user is looking at agende or footer (which already have prominent WhatsApp buttons)
+      // Check if user is looking at agende or contato (which already have prominent WhatsApp buttons)
       if (agendeSection) {
         const agendeRect = agendeSection.getBoundingClientRect();
         if (agendeRect.top < window.innerHeight && agendeRect.bottom > 60) {
@@ -96,19 +96,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      if (footerSection) {
-        const footerRect = footerSection.getBoundingClientRect();
-        if (footerRect.top < window.innerHeight - 80) {
+      if (contatoSection) {
+        const contatoRect = contatoSection.getBoundingClientRect();
+        if (contatoRect.top < window.innerHeight - 80) {
           shouldHide = true;
         }
       }
 
       if (shouldHide) {
         stickyWhatsapp.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
-        stickyWhatsapp.classList.remove('translate-y-0', 'opacity-100');
+        stickyWhatsapp.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
       } else {
         stickyWhatsapp.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
-        stickyWhatsapp.classList.add('translate-y-0', 'opacity-100');
+        stickyWhatsapp.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
       }
     };
 
