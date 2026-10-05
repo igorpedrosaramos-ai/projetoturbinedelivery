@@ -384,62 +384,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 8. Horizontal Timeline with GSAP & ScrollTrigger for "5 Passos do Sucesso Turbine"
   function initStepsTimeline() {
+    const metodo = document.getElementById('metodo');
     const pinnedViewport = document.querySelector('.steps-pinned-viewport');
     const track = document.getElementById('stepsSliderTrack');
     const lineFill = document.getElementById('stepsAxisLineFill');
 
-    if (!pinnedViewport || !track || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+    if (!metodo || !pinnedViewport || !track || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
       return;
     }
 
     gsap.registerPlugin(ScrollTrigger);
 
-    // Responsive setup: On screens >= 1024px, run the pinned horizontal scrub
+    // Responsive setup: On desktop width (>= 1024px) AND adequate height (>= 580px)
     const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 1024px)", () => {
+    mm.add("(min-width: 1024px) and (min-height: 580px)", () => {
       const getScrollDistance = () => {
         const stageContainer = document.querySelector('.steps-stage-container');
         const containerWidth = stageContainer ? stageContainer.clientWidth : window.innerWidth;
         return Math.max(0, track.scrollWidth - containerWidth + 80);
       };
 
-      // Main horizontal sliding animation
-      const horizontalTween = gsap.to(track, {
-        x: () => -getScrollDistance(),
-        ease: "none"
+      const totalDist = getScrollDistance();
+      const scrubDuration = totalDist + window.innerHeight * 1.5;
+
+      // Master Timeline directly on #metodo (Zero parent overflow conflicts, 100% solid background)
+      const masterTimeline = gsap.timeline({
+        scrollTrigger: {
+          id: "metodoMasterTimeline",
+          trigger: metodo,
+          start: "top top",
+          end: () => "+=" + scrubDuration,
+          pin: true,
+          pinSpacing: true,
+          anticipatePin: 1,
+          scrub: 1,
+          invalidateOnRefresh: true,
+        }
       });
 
-      // Pin and scrub on the sticky viewport with comfortable scrolling duration
-      ScrollTrigger.create({
-        trigger: pinnedViewport,
-        start: "top top",
-        end: () => `+=${Math.max(window.innerHeight * 2.8, getScrollDistance() * 0.95)}`,
-        pin: true,
-        animation: horizontalTween,
-        scrub: 1,
-        invalidateOnRefresh: true,
-      });
+      // Unified: track slide & line fill on the SAME timeline
+      masterTimeline.to(track, {
+        x: () => -totalDist,
+        ease: "none",
+        duration: 1
+      }, 0);
 
-      // Center axis line drawing animation
       if (lineFill) {
-        gsap.fromTo(lineFill, 
+        masterTimeline.fromTo(lineFill,
           { width: "0%" },
-          {
-            width: "100%",
-            ease: "none",
-            scrollTrigger: {
-              trigger: pinnedViewport,
-              start: "top top",
-              end: () => `+=${Math.max(window.innerHeight * 2.8, getScrollDistance() * 0.95)}`,
-              scrub: 1,
-              invalidateOnRefresh: true
-            }
-          }
+          { width: "100%", ease: "none", duration: 1 },
+          0
         );
       }
 
-      // Animate individual step milestones progressively as you scroll
+      // Milestones scrubbed smoothly against masterTimeline
       const milestones = track.querySelectorAll('.step-milestone');
       milestones.forEach((item) => {
         const stepNum = parseInt(item.getAttribute('data-step') || '1', 10);
@@ -449,18 +448,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const content = item.querySelector('.step-content') || item.querySelector('div[class*="space-y-"]');
 
         if (stepNum === 1) {
-          // Passo 1 starts directly in the middle of the screen!
+          // Passo 1 starts directly visible in center
           if (stem) gsap.set(stem, { scaleY: 1 });
           if (dot) gsap.set(dot, { scale: 1, opacity: 1, boxShadow: "0 0 20px rgba(244,197,66,0.95)" });
           if (content) gsap.set(content, { opacity: 1, y: 0 });
 
-          // As Passo 1 scrolls out to the left, fade it out gracefully only near the left edge
           gsap.to(item, {
             opacity: 0,
             ease: "power1.out",
             scrollTrigger: {
               trigger: item,
-              containerAnimation: horizontalTween,
+              containerAnimation: masterTimeline,
               start: "left 20%",
               end: "left 2%",
               scrub: 0.5
@@ -470,32 +468,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Passos 2, 3, 4, 5, 6:
-        // Start completely hidden and unrevealed
         if (stem) gsap.set(stem, { scaleY: 0 });
         if (dot) gsap.set(dot, { scale: 0, opacity: 0 });
         if (content) gsap.set(content, { opacity: 0, y: isTop ? 28 : -28 });
 
-        // Timeline: animates into full view as it approaches center
         const itemTl = gsap.timeline({
           scrollTrigger: {
             trigger: item,
-            containerAnimation: horizontalTween,
-            start: "left 90%",  // begins revealing as it enters
-            end: "left 60%",    // 100% visible and fully formed
+            containerAnimation: masterTimeline,
+            start: "left 90%",
+            end: "left 60%",
             scrub: 0.5
           }
         });
 
-        // 1. Stem reveals vertically from axis
         if (stem) {
-          itemTl.to(stem, {
-            scaleY: 1,
-            ease: "power1.out",
-            duration: 0.4
-          }, 0);
+          itemTl.to(stem, { scaleY: 1, ease: "power1.out", duration: 0.4 }, 0);
         }
-
-        // 2. Node dot lights up and scales
         if (dot) {
           itemTl.to(dot, {
             scale: 1,
@@ -505,24 +494,16 @@ document.addEventListener('DOMContentLoaded', () => {
             duration: 0.35
           }, 0.1);
         }
-
-        // 3. Text content fades in and glides into position
         if (content) {
-          itemTl.to(content, {
-            opacity: 1,
-            y: 0,
-            ease: "power2.out",
-            duration: 0.5
-          }, 0.15);
+          itemTl.to(content, { opacity: 1, y: 0, ease: "power2.out", duration: 0.5 }, 0.15);
         }
 
-        // 4. Fade out gently only when exiting near the left edge
         gsap.to(item, {
           opacity: 0,
           ease: "power1.out",
           scrollTrigger: {
             trigger: item,
-            containerAnimation: horizontalTween,
+            containerAnimation: masterTimeline,
             start: "left 18%",
             end: "left 2%",
             scrub: 0.5
@@ -530,7 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-      // Cleanup when leaving desktop breakpoint (resize / zoom)
+      // Cleanup when leaving desktop breakpoint
       return () => {
         gsap.set(track, { clearProps: "all" });
         if (lineFill) gsap.set(lineFill, { clearProps: "all" });
@@ -546,8 +527,8 @@ document.addEventListener('DOMContentLoaded', () => {
       };
     });
 
-    // Mobile & Tablet (< 1024px): reset any inline transforms and opacities
-    mm.add("(max-width: 1023px)", () => {
+    // Compact Windows (< 1024px ou altura < 580px): reset inline transforms
+    mm.add("(max-width: 1023px), (max-height: 579px)", () => {
       gsap.set(track, { clearProps: "all" });
       if (lineFill) gsap.set(lineFill, { clearProps: "all" });
       const milestones = track.querySelectorAll('.step-milestone');
@@ -568,7 +549,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
         ScrollTrigger.refresh(true);
-      }, 150);
+      }, 200);
     });
   }
 
