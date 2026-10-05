@@ -74,16 +74,16 @@
       
       <!-- Logo: Official TURBINE GESTÃO DE DELIVERY (Direct Navbar Integration, Zero Cards) -->
       <a href="#inicio" class="flex items-center flex-shrink-0">
-        <img src="assets/images/navbar-logo-full.png" alt="Turbine Gestão de Delivery" class="h-[40px] sm:h-[46px] lg:h-[50px] w-auto object-contain transition-transform hover:scale-105 select-none">
+        <img src="assets/images/navbar-logo-full.png" alt="Turbine Gestão de Delivery" class="h-[38px] sm:h-[44px] lg:h-[46px] xl:h-[48px] w-auto object-contain transition-transform hover:scale-105 select-none">
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden lg:flex items-center gap-7 lg:gap-9">
-        <a href="#metodo" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Como funciona</a>
-        <a href="#desafios" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Serviços</a>
-        <a href="#casos" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Resultados</a>
-        <a href="#sobre" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Sobre</a>
-        <a href="#contato" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Contato</a>
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-8">
+        <a href="#metodo" class="text-[13px] lg:text-[13.5px] xl:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Como funciona</a>
+        <a href="#desafios" class="text-[13px] lg:text-[13.5px] xl:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Serviços</a>
+        <a href="#casos" class="text-[13px] lg:text-[13.5px] xl:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Resultados</a>
+        <a href="#sobre" class="text-[13px] lg:text-[13.5px] xl:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Sobre</a>
+        <a href="#contato" class="text-[13px] lg:text-[13.5px] xl:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Contato</a>
       </nav>
 
       <!-- Right Actions (Desktop CTA & Clean Mobile Hamburger) -->
@@ -132,24 +132,23 @@
     <!-- PHOTO LAYER: Anchored to right on Desktop, full-bleed on Mobile -->
     <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
       
-      <!-- DESKTOP PHOTO LAYER (>= 768px): Anchored to right of max-w-[1240px] container -->
-      <div class="hidden md:block max-w-[1240px] mx-auto h-full relative">
-        <div class="absolute right-0 top-0 bottom-0 h-full flex items-center justify-end">
+      <!-- DESKTOP PHOTO LAYER (>= 768px): Solução 2 - Sangria Total à Direita (Full-Bleed Right, Zero Vácuo) -->
+      <div class="hidden md:block w-full h-full relative">
+        <div class="absolute right-0 top-0 bottom-0 h-full w-[54vw] min-w-[720px] max-w-[1200px] overflow-hidden select-none pointer-events-none"
+             style="mask-image: linear-gradient(to right, transparent 0%, black 28%, black 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 28%, black 100%);">
           <img src="assets/images/hero-murillo-bg.jpg" 
                alt="Murillo Carregari - Turbine Gestão de Delivery" 
-               class="h-full w-auto max-w-none object-contain select-none"
-               style="aspect-ratio: 2528 / 1686;">
-          
-          <!-- Smooth horizontal gradient fade on left edge into #050505 -->
-          <div class="absolute inset-y-0 left-0 w-44 lg:w-60 bg-gradient-to-r from-[#050505] via-[#050505]/75 to-transparent"></div>
+               class="w-full h-full object-cover object-[75%_20%] select-none">
           
           <!-- Soft top fade behind header for crisp navigation readability -->
-          <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#050505]/35 to-transparent"></div>
+          <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#050505]/40 to-transparent"></div>
           
           <!-- Soft bottom fade into platform bar -->
           <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#050505] to-transparent"></div>
+        </div>
 
-          <!-- Badge Oficial Murillo Carregari (Desktop) -->
+        <!-- Badge Oficial Murillo Carregari (Desktop) - Alinhado no grid do site -->
+        <div class="max-w-[1240px] mx-auto h-full relative pointer-events-none">
           <div class="absolute bottom-20 lg:bottom-24 right-6 lg:right-10 xl:right-16 z-20 pointer-events-auto">
             <div class="flex items-center gap-3 bg-[#090A0D]/90 backdrop-blur-md border border-white/10 border-l-[3px] border-l-[#FFE045] rounded-xl px-4 py-2.5 shadow-2xl">
               <div class="flex flex-col">
