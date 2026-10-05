@@ -8,28 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     window.lucide.createIcons();
   }
 
-  // 1.1 Sticky Header on Scroll
-  const headerMain = document.querySelector('.header-main');
-  if (headerMain) {
-    const handleHeaderScroll = () => {
-      if (window.scrollY > 40) {
-        headerMain.classList.add('header-scrolled');
-      } else {
-        headerMain.classList.remove('header-scrolled');
-      }
-    };
-    window.addEventListener('scroll', handleHeaderScroll, { passive: true });
-    handleHeaderScroll();
-  }
-
   // 2. Mobile Menu Toggle
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
   if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
+    mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
 
@@ -37,12 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
       });
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.add('hidden');
-      }
     });
   }
 
@@ -78,42 +57,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 4. Sticky Floating WhatsApp Button with smart hiding on CTA sections
+  // 4. Sticky Floating WhatsApp Pill
   const stickyWhatsapp = document.getElementById('stickyWhatsapp');
-  const agendeSection = document.getElementById('agende');
-  const footerSection = document.querySelector('section:last-of-type');
 
   if (stickyWhatsapp) {
-    const updateWhatsappVisibility = () => {
-      const scrollY = window.scrollY;
-      let shouldHide = scrollY < 400;
-
-      // Check if user is looking at agende or footer (which already have prominent WhatsApp buttons)
-      if (agendeSection) {
-        const agendeRect = agendeSection.getBoundingClientRect();
-        if (agendeRect.top < window.innerHeight && agendeRect.bottom > 60) {
-          shouldHide = true;
-        }
-      }
-
-      if (footerSection) {
-        const footerRect = footerSection.getBoundingClientRect();
-        if (footerRect.top < window.innerHeight - 80) {
-          shouldHide = true;
-        }
-      }
-
-      if (shouldHide) {
-        stickyWhatsapp.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
-        stickyWhatsapp.classList.remove('translate-y-0', 'opacity-100');
-      } else {
-        stickyWhatsapp.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        stickyWhatsapp.classList.remove('translate-y-24', 'opacity-0');
         stickyWhatsapp.classList.add('translate-y-0', 'opacity-100');
+      } else {
+        stickyWhatsapp.classList.remove('translate-y-0', 'opacity-100');
+        stickyWhatsapp.classList.add('translate-y-24', 'opacity-0');
       }
-    };
-
-    window.addEventListener('scroll', updateWhatsappVisibility, { passive: true });
-    updateWhatsappVisibility();
+    });
   }
 
   // 5. Smooth Scroll Offset
@@ -410,11 +366,11 @@ document.addEventListener('DOMContentLoaded', () => {
         ease: "none"
       });
 
-      // Pin and scrub on the sticky viewport with comfortable scrolling duration
+      // Pin and scrub on the sticky viewport
       ScrollTrigger.create({
         trigger: pinnedViewport,
         start: "top top",
-        end: () => `+=${Math.max(window.innerHeight * 2.8, getScrollDistance() * 0.95)}`,
+        end: () => `+=${Math.max(window.innerHeight * 4, getScrollDistance())}`,
         pin: true,
         animation: horizontalTween,
         scrub: 1,
@@ -431,7 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollTrigger: {
               trigger: pinnedViewport,
               start: "top top",
-              end: () => `+=${Math.max(window.innerHeight * 2.8, getScrollDistance() * 0.95)}`,
+              end: () => `+=${Math.max(window.innerHeight * 4, getScrollDistance())}`,
               scrub: 1,
               invalidateOnRefresh: true
             }
@@ -454,15 +410,15 @@ document.addEventListener('DOMContentLoaded', () => {
           if (dot) gsap.set(dot, { scale: 1, opacity: 1, boxShadow: "0 0 20px rgba(244,197,66,0.95)" });
           if (content) gsap.set(content, { opacity: 1, y: 0 });
 
-          // As Passo 1 scrolls out to the left, fade it out gracefully only near the left edge
+          // As Passo 1 scrolls out to the left, fade it out gracefully
           gsap.to(item, {
             opacity: 0,
             ease: "power1.out",
             scrollTrigger: {
               trigger: item,
               containerAnimation: horizontalTween,
-              start: "left 20%",
-              end: "left 2%",
+              start: "left 35%",
+              end: "left 10%",
               scrub: 0.5
             }
           });
@@ -480,8 +436,8 @@ document.addEventListener('DOMContentLoaded', () => {
           scrollTrigger: {
             trigger: item,
             containerAnimation: horizontalTween,
-            start: "left 90%",  // begins revealing as it enters
-            end: "left 60%",    // 100% visible and fully formed
+            start: "left 80%",  // begins revealing as it approaches center
+            end: "left 50%",    // 100% visible and fully formed exactly at center
             scrub: 0.5
           }
         });
@@ -516,15 +472,15 @@ document.addEventListener('DOMContentLoaded', () => {
           }, 0.15);
         }
 
-        // 4. Fade out gently only when exiting near the left edge
+        // 4. Fade out gently when exiting to the left
         gsap.to(item, {
           opacity: 0,
           ease: "power1.out",
           scrollTrigger: {
             trigger: item,
             containerAnimation: horizontalTween,
-            start: "left 18%",
-            end: "left 2%",
+            start: "left 32%",
+            end: "left 8%",
             scrub: 0.5
           }
         });

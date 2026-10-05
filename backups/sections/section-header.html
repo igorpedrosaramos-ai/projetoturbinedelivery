@@ -1,0 +1,65 @@
+<!-- MAIN NAVIGATION BAR (OFFICIAL TURBINE DARK)   -->
+  <!-- ============================================== -->
+  <header class="absolute top-0 left-0 w-full z-50 bg-transparent border-none">
+    <div class="w-full max-w-[1240px] mx-auto h-[80px] sm:h-[88px] px-6 sm:px-10 lg:px-12 flex items-center justify-between">
+      
+      <!-- Logo: Official TURBINE GESTÃO DE DELIVERY (Direct Navbar Integration, Zero Cards) -->
+      <a href="#inicio" class="flex items-center flex-shrink-0">
+        <img src="assets/images/navbar-logo-full.png" alt="Turbine Gestão de Delivery" class="h-[38px] sm:h-[44px] lg:h-[48px] w-auto object-contain transition-transform hover:scale-105 select-none">
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center gap-7 lg:gap-9">
+        <a href="#metodo" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Como funciona</a>
+        <a href="#desafios" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Serviços</a>
+        <a href="#resultados" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Resultados</a>
+        <a href="#sobre" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Sobre</a>
+        <a href="#contato" class="text-[13.5px] lg:text-[14px] font-medium text-white/90 hover:text-white transition-colors">Contato</a>
+      </nav>
+
+      <!-- Right Actions (Desktop CTA & Mobile CTA + Hamburger) -->
+      <div class="flex items-center gap-2.5 sm:gap-4">
+        <!-- Desktop CTA Button -->
+        <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20turbinar%20meu%20delivery." target="_blank"
+           class="hidden lg:inline-flex items-center justify-center h-[38px] px-6 bg-[#FFE045] hover:bg-[#F5D830] text-[#000000] text-[13px] font-bold rounded-full transition-all gap-1.5 shadow-md hover:shadow-lg whitespace-nowrap">
+          <span>Quero turbinar meu delivery</span>
+          <span class="text-sm font-bold">→</span>
+        </a>
+
+        <!-- Mobile Compact CTA Button (matching mobile reference layout) -->
+        <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20turbinar%20meu%20delivery." target="_blank"
+           class="lg:hidden inline-flex items-center justify-center bg-[#FFE045] hover:bg-[#F5D830] text-[#000000] text-[10px] sm:text-[11px] font-bold rounded-full px-3 py-1.5 leading-[1.15] text-center shadow-sm whitespace-nowrap">
+          <span>Quero turbinar<br>meu delivery →</span>
+        </a>
+
+        <!-- Mobile Menu Button (Hamburger) - hidden on desktop, visible on mobile -->
+        <button id="mobileMenuBtn" class="flex lg:hidden p-1.5 text-white hover:text-[#FFE045] focus:outline-none transition-colors items-center justify-center flex-shrink-0" style="width: 36px; height: 36px; background: transparent; border: none; cursor: pointer;" aria-label="Abrir Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px; display: block;">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-[#0A0A0E]/95 backdrop-blur-md border-b border-white/10 px-6 py-5 space-y-4">
+      <a href="#metodo" class="mobile-nav-link block text-sm font-medium text-white/80 hover:text-white">Como funciona</a>
+      <a href="#desafios" class="mobile-nav-link block text-sm font-medium text-white/80 hover:text-white">Serviços</a>
+      <a href="#resultados" class="mobile-nav-link block text-sm font-medium text-white/80 hover:text-white">Resultados</a>
+      <a href="#sobre" class="mobile-nav-link block text-sm font-medium text-white/80 hover:text-white">Sobre</a>
+      <a href="#contato" class="mobile-nav-link block text-sm font-medium text-white/80 hover:text-white">Contato</a>
+      <div class="pt-2">
+        <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20turbinar%20meu%20delivery." target="_blank"
+           class="inline-flex items-center justify-center w-full h-[40px] bg-[#FFE045] hover:bg-[#F5D830] text-[#000000] text-xs font-bold rounded-full transition-all gap-1.5">
+          <span>Quero turbinar meu delivery</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================== -->
+  

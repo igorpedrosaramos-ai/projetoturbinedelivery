@@ -7,4 +7,21 @@ local-server.js
 .DS_Store
 Thumbs.db
 
-.vercel
+# Scratch and test files in root
+/*.js
+/*.png
+/*.jpg
+verify_screens/
+assets/images/turbine-ref/
+assets/images/*backup*
+assets/images/*test*
+assets/images/*mock*
+assets/images/*pill*
+assets/images/*trimmed*
+assets/images/*crop*
+assets/images/*preview*
+assets/images/*comparison*
+assets/images/navbar-logo-flawless*
+assets/images/turbine-navbar-official*
+assets/images/logo-horizontal-dark*
+assets/images/tv-*
