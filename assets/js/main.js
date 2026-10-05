@@ -406,7 +406,8 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       const totalDist = getScrollDistance();
-      const scrubDuration = totalDist + window.innerHeight * 1.5;
+      // Fluid & responsive scrub duration (navegação ágil e precisa pelas 5 etapas)
+      const scrubDuration = totalDist + 400;
 
       // Master Timeline directly on #metodo (Zero parent overflow conflicts, 100% solid background)
       const masterTimeline = gsap.timeline({
