@@ -186,27 +186,32 @@
         </div>
       </div>
 
-      <!-- MOBILE PHOTO LAYER (< 768px): Photo anchored to right side with text contrast overlay -->
-      <div class="md:hidden absolute inset-0 w-full h-full">
-        <img src="assets/images/hero-murillo-bg.jpg" 
-             alt="Murillo Carregari - Turbine Gestão de Delivery" 
-             class="w-full h-full object-cover object-[67%_top] select-none">
-        
-        <!-- Dark gradient on left to guarantee 100% crisp legibility of headline & copy, fading out before Murillo's face -->
-        <div class="absolute inset-0 bg-gradient-to-r from-[#050505] from-15% via-[#050505]/75 via-42% to-transparent"></div>
-        <!-- Soft top shadow behind navbar -->
-        <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#050505]/75 via-[#050505]/20 to-transparent"></div>
-        <!-- Soft bottom fade into platform bar -->
-        <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#050505] to-transparent"></div>
+      <!-- MOBILE HERO LAYER: Separated cleanly below for zero text collision and full editorial elegance -->
 
-        <!-- Badge Oficial Murillo Carregari (Mobile) -->
-        <div class="absolute bottom-[72px] sm:bottom-22 right-3 sm:right-6 z-20 pointer-events-auto">
-          <div class="flex items-center gap-2 bg-[#090A0D]/95 backdrop-blur-md border border-white/10 border-l-[3px] border-l-[#FFE045] rounded-lg px-2.5 py-1.5 shadow-2xl">
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- MOBILE HERO (< 768px): OPÇÃO B (EDITORIAL COM MURILLO NO TOPO)  -->
+    <!-- ============================================================== -->
+    <div class="flex flex-col md:hidden flex-1 justify-between relative z-10">
+      
+      <!-- Topo com Foto Editorial de Murillo com Fade Suave -->
+      <div class="relative w-full h-[275px] sm:h-[310px] overflow-hidden flex-shrink-0">
+        <img src="assets/images/hero-murillo-bg-backup.jpg" 
+             alt="Murillo Carregari - Turbine Gestão de Delivery" 
+             class="w-full h-full object-cover object-[62%_25%] select-none">
+        
+        <!-- Gradiente na base para fusão suave com o fundo preto puro -->
+        <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-transparent pointer-events-none"></div>
+        
+        <!-- Badge de Autoridade Flutuante -->
+        <div class="absolute bottom-3.5 left-5 z-10 pointer-events-auto">
+          <div class="flex items-center gap-2 bg-[#090A0E]/95 backdrop-blur-md border border-white/15 border-l-[3px] border-l-[#FFE045] rounded-lg px-2.5 py-1.5 shadow-xl">
             <div class="flex flex-col">
-              <span class="text-white font-bold text-[11px] sm:text-[12.5px] tracking-tight leading-tight">
+              <span class="text-white font-bold text-[11px] tracking-tight leading-tight">
                 Murillo Carregari
               </span>
-              <span class="text-[#FFE045] font-semibold text-[8px] sm:text-[9.5px] tracking-wider uppercase mt-0.5 leading-tight">
+              <span class="text-[#FFE045] font-semibold text-[8px] tracking-wider uppercase mt-0.5 leading-tight">
                 Gestor de Performance
               </span>
             </div>
@@ -214,43 +219,87 @@
         </div>
       </div>
 
+      <!-- Conteúdo Textual Abaixo da Foto (Fundo 100% Preto, Legibilidade Absoluta) -->
+      <div class="px-5 pt-1.5 pb-6 flex-1 flex flex-col justify-between">
+        <div class="space-y-3">
+          
+          <!-- Eyebrow -->
+          <div class="flex items-center gap-2">
+            <span class="w-5 h-[2px] bg-[#FFE045] rounded-full inline-block"></span>
+            <span class="text-[9.5px] font-bold text-white uppercase tracking-[0.18em]">
+              GESTÃO PROFISSIONAL DE DELIVERY
+            </span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="text-[25px] font-extrabold text-white tracking-tight leading-[1.15]">
+            Seu delivery não precisa ser mais uma coisa para você <span class="text-[#FFE045]">administrar.</span>
+          </h1>
+
+          <!-- Subtítulo -->
+          <p class="text-[12px] text-[#A1A1AA] leading-[1.5]">
+            A Turbine Gestão Delivery assume a operação do seu cardápio nos principais aplicativos, otimizando preços, imagens, descrições, promoções e posicionamento para aumentar suas vendas.
+          </p>
+
+          <!-- CTA Button -->
+          <div class="pt-1">
+            <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20turbinar%20meu%20delivery." target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center w-full h-[44px] bg-[#FFE045] hover:bg-[#F5D830] text-[#000000] text-[13px] font-bold rounded-full transition-all shadow-lg shadow-[#FFE045]/15 gap-2 whitespace-nowrap">
+              <span>Quero turbinar meu delivery</span>
+              <span class="text-sm font-bold">→</span>
+            </a>
+          </div>
+
+          <!-- Prova Social -->
+          <div class="flex items-center gap-2.5 pt-0.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#FFE045]"></span>
+            <span class="text-[11.5px] text-white/80 font-medium">
+              <strong class="text-white">+30 empresas</strong> já confiam na Turbine
+            </span>
+          </div>
+
+        </div>
+      </div>
+
     </div>
 
-    <!-- Main Hero Content Container -->
-    <div class="relative z-10 w-full max-w-[1240px] mx-auto px-5 sm:px-10 lg:px-12 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-8 md:pb-12 flex-1 flex flex-col justify-center">
-      <div class="max-w-[340px] sm:max-w-md md:max-w-xl lg:max-w-2xl space-y-4 sm:space-y-6 md:space-y-7">
+    <!-- ============================================================== -->
+    <!-- DESKTOP HERO CONTENT (>= 768px): PRESERVADO INTEGRALMENTE      -->
+    <!-- ============================================================== -->
+    <div class="hidden md:flex relative z-10 w-full max-w-[1240px] mx-auto px-5 sm:px-10 lg:px-12 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-8 md:pb-12 flex-1 flex-col justify-center">
+      <div class="max-w-xl lg:max-w-2xl space-y-6 md:space-y-7">
         
         <!-- Eyebrow -->
-        <div class="flex items-start gap-2.5 sm:gap-3">
-          <span class="w-6 sm:w-8 h-[2px] bg-[#FFE045] rounded-full inline-block mt-1.5 flex-shrink-0"></span>
-          <span class="text-[10px] sm:text-[11.5px] font-semibold text-white uppercase tracking-[0.16em] sm:tracking-[0.2em] leading-tight">
-            GESTÃO PROFISSIONAL<br class="block sm:hidden"> DE DELIVERY
+        <div class="flex items-start gap-3">
+          <span class="w-8 h-[2px] bg-[#FFE045] rounded-full inline-block mt-1.5 flex-shrink-0"></span>
+          <span class="text-[11.5px] font-semibold text-white uppercase tracking-[0.2em] leading-tight">
+            GESTÃO PROFISSIONAL DE DELIVERY
           </span>
         </div>
 
         <!-- H1 Headline with exact line breaks from reference -->
-        <h1 class="text-[28px] sm:text-4xl md:text-5xl lg:text-[52px] font-extrabold text-white tracking-tight leading-[1.12] sm:leading-[1.1]">
+        <h1 class="text-4xl md:text-5xl lg:text-[52px] font-extrabold text-white tracking-tight leading-[1.1]">
           Seu delivery não<br>precisa ser mais uma<br>coisa para você<br><span class="text-[#FFE045]">administrar.</span>
         </h1>
 
         <!-- Subtitle with exact crisp styling -->
-        <p class="text-[13px] sm:text-[14.5px] md:text-[15.5px] text-[#D4D4D8] font-normal leading-[1.55] sm:leading-[1.65]">
+        <p class="text-[14.5px] md:text-[15.5px] text-[#D4D4D8] font-normal leading-[1.65]">
           A Turbine Gestão Delivery assume a operação do seu cardápio nos principais aplicativos, otimizando preços, imagens, descrições, promoções e posicionamento para aumentar suas vendas.
         </p>
 
         <!-- CTA Button + Social Proof -->
-        <div class="pt-1 sm:pt-2 flex flex-col gap-4 sm:gap-6">
+        <div class="pt-2 flex flex-col gap-6">
           <a href="https://wa.me/5511995971212?text=Ol%C3%A1%20Murillo%2C%20quero%20turbinar%20meu%20delivery." target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center justify-center h-[42px] sm:h-[46px] px-6 sm:px-8 bg-[#FFE045] hover:bg-[#F5D830] text-[#000000] text-[12.5px] sm:text-[13.5px] font-bold rounded-full transition-all shadow-md hover:shadow-lg gap-2 whitespace-nowrap self-start">
+             class="inline-flex items-center justify-center h-[46px] px-8 bg-[#FFE045] hover:bg-[#F5D830] text-[#000000] text-[13.5px] font-bold rounded-full transition-all shadow-md hover:shadow-lg gap-2 whitespace-nowrap self-start">
             <span>Quero turbinar meu delivery</span>
-            <span class="text-sm sm:text-base font-bold">→</span>
+            <span class="text-base font-bold">→</span>
           </a>
 
           <!-- Social Proof with yellow vertical bar matching reference -->
           <div class="flex items-center gap-3 border-l-2 border-[#FFE045] pl-3 py-0.5">
             <div class="flex flex-col">
-              <span class="text-[13px] sm:text-sm font-bold text-white leading-tight">+30 empresas</span>
-              <span class="text-[11px] sm:text-[12px] text-[#A1A1AA] leading-tight mt-0.5">já confiam na Turbine</span>
+              <span class="text-sm font-bold text-white leading-tight">+30 empresas</span>
+              <span class="text-[12px] text-[#A1A1AA] leading-tight mt-0.5">já confiam na Turbine</span>
             </div>
           </div>
         </div>
